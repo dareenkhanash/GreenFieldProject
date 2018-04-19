@@ -2292,22 +2292,10 @@ eval("/* WEBPACK VAR INJECTION */(function(process) {/**\n * Copyright (c) 2013-
 /*!**********************************************!*\
   !*** ./react-client/src/components/List.jsx ***!
   \**********************************************/
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ 83);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ListItem = __webpack_require__(/*! ./ListItem.jsx */ 187);\n\nvar _ListItem2 = _interopRequireDefault(_ListItem);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar List = function List(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h4',\n      null,\n      ' List Component '\n    ),\n    'There are ',\n    props.items.length,\n    ' items.',\n    props.items.map(function (item) {\n      return _react2.default.createElement(_ListItem2.default, { item: item });\n    })\n  );\n};\n\nexports.default = List;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTg2LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3JlYWN0LWNsaWVudC9zcmMvY29tcG9uZW50cy9MaXN0LmpzeD9hMmFkIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgTGlzdEl0ZW0gZnJvbSAnLi9MaXN0SXRlbS5qc3gnO1xuXG5jb25zdCBMaXN0ID0gKHByb3BzKSA9PiAoXG4gIDxkaXY+XG4gICAgPGg0PiBMaXN0IENvbXBvbmVudCA8L2g0PlxuICAgIFRoZXJlIGFyZSB7IHByb3BzLml0ZW1zLmxlbmd0aCB9IGl0ZW1zLlxuICAgIHsgcHJvcHMuaXRlbXMubWFwKGl0ZW0gPT4gPExpc3RJdGVtIGl0ZW09e2l0ZW19Lz4pfVxuICA8L2Rpdj5cbilcblxuZXhwb3J0IGRlZmF1bHQgTGlzdDtcblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gcmVhY3QtY2xpZW50L3NyYy9jb21wb25lbnRzL0xpc3QuanN4Il0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBOzs7OztBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQURBO0FBRUE7QUFGQTtBQUdBO0FBQUE7QUFBQTtBQUhBO0FBREE7QUFDQTtBQU9BIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///186\n");
-
-/***/ }),
-/* 187 */
-/* no static exports found */
-/* all exports used */
-/*!**************************************************!*\
-  !*** ./react-client/src/components/ListItem.jsx ***!
-  \**************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ 83);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ListItem = function ListItem(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    props.item.description\n  );\n};\n\nexports.default = ListItem;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTg3LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3JlYWN0LWNsaWVudC9zcmMvY29tcG9uZW50cy9MaXN0SXRlbS5qc3g/ZDFjZSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5jb25zdCBMaXN0SXRlbSA9IChwcm9wcykgPT4gKFxuICA8ZGl2PlxuICAgIHsgcHJvcHMuaXRlbS5kZXNjcmlwdGlvbiB9XG4gIDwvZGl2PlxuKVxuXG5leHBvcnQgZGVmYXVsdCBMaXN0SXRlbTtcblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gcmVhY3QtY2xpZW50L3NyYy9jb21wb25lbnRzL0xpc3RJdGVtLmpzeCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBREE7QUFEQTtBQUNBO0FBS0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///187\n");
+eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/rbk7/Desktop/Green Field/GreenFieldProject/react-client/src/components/List.jsx'\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTg2LmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///186\n");
 
 /***/ })
 /******/ ]);
