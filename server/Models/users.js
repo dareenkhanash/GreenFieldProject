@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+var bcrypt = require('bcrypt-nodejs');
+
 ////User Schema
+
+
 var usersSchema = mongoose.Schema({
   userName: {
     type:String,
@@ -18,8 +22,25 @@ var usersSchema = mongoose.Schema({
 });
 //User Model
 var Users = mongoose.model('Users', usersSchema);
+
+var comparePassword= function(attemptedPassword, callback) {
+   callback(bcrypt.compareSync(attemptedPassword, hash));
+  }
+var hashPassword= function(password,callback) {
+  const saltRounds = 10;
+  var salt = bcrypt.genSaltSync(saltRounds);
+  var hash = bcrypt.hashSync(password, salt);
+  callback(hash)
+  }
+
+
 var createUsers=function(data,callback){
-  Users.create(data,callback);
+  var userdata=data;
+  hashPassword(data.password,function(hashed){
+    userdata["password"]=hashed;
+  })
+  
+  Users.create(userdata,callback);
 }
 var getUser=function(userName,callback){
   var query  = Users.where({ userName: userName });

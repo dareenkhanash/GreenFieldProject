@@ -7,6 +7,7 @@ var Users=require('./Models/users');
 //app.use(express.static(__dirname + '/../react-client/dist'));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.post("/",function(req,res){
 	var user=req.body
 	Users.createUsers(user,function(err,userdata){
@@ -18,6 +19,7 @@ app.post("/",function(req,res){
 	})
 
 })
+
 app.get('/:userName', function (req, res) {
 	
   Users.getUser(req.params.userName,function(err,user){
@@ -28,6 +30,7 @@ app.get('/:userName', function (req, res) {
 		}
   })
 });
+
 app.put('/:userName', function (req, res) {
 	var query=req.params.userName;
 	var updatedData=req.body
@@ -40,6 +43,7 @@ app.put('/:userName', function (req, res) {
 		}
   })
 });
+
 app.delete('/:userName', function (req, res) {
 	var query=req.params.userName;
 
@@ -51,6 +55,7 @@ app.delete('/:userName', function (req, res) {
 		}
   })
 });
+
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });
