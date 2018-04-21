@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import SignUp from './components/signup.jsx';
-
+import './styles/styles.scss'
 
 
 
