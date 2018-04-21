@@ -42,6 +42,15 @@ var allJobs = function (data, callback){
 	});
 };
 
+var jobByTitle = function (jobTitle, callback){
+  Jobs.findOne({jobTitle: jobTitle}, function(err, data){
+    if(err){
+      throw err
+    }
+    callback(data)
+  });
+};
+
 var jobsByCatagory = function(category, callback){
 	Jobs.findOne({category: category}, function(err, data){
     	if(err){
@@ -78,6 +87,7 @@ var updateJob = function(jobTitle, updatedData, callback){
 module.exports.Jobs = Jobs;
 module.exports.createJob = createJob;
 module.exports.allJobs = allJobs;
+module.exports.jobByTitle = jobByTitle;
 module.exports.jobsByCatagory = jobsByCatagory;
 module.exports.jobsByStartTime = jobsByStartTime;
 module.exports.jobsByEndTime = jobsByEndTime;
