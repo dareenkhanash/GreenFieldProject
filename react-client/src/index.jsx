@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import SignUp from './components/signup.jsx';
+import SignUpForm from './components/signup.jsx';
 import './styles/styles.scss'
 
 
@@ -30,7 +30,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <SignUp/>
+      <SignUpForm/>
     </div>)
   }
 }
