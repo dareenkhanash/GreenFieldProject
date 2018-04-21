@@ -9,27 +9,35 @@ var usersSchema = mongoose.Schema({
     unique:true,
     trim: true
   },
-  name:String,
+  name:{
+        type: String,
+        required: true
+      },
   password: String,
   gender:String,
-  phoneNumber:Number,
+  phoneNumber:{
+        type: Number,
+        required: true
+      },
   Address:String,
-  Age:Number,
+  Age:{
+        type: Number,
+        required: true
+      },
   Nationality:String
-
 });
+
 //User Model
 var Users = mongoose.model('Users', usersSchema);
+
 
 ////hashing the password
 var hashPassword= function(password,callback) {
   const saltRounds = 10;
   var salt = bcrypt.genSaltSync(saltRounds);
   var hash = bcrypt.hashSync(password, salt);
-  callback(hash)
-  }
-
-
+  callback(hash);
+  };
 var createUsers=function(data,callback){
   var userdata=data;
   //////add the hashed password to the data
@@ -69,3 +77,4 @@ module.exports.createUsers=createUsers
 module.exports.updateUsers=updateUsers
 module.exports.deleteUser=deleteUser
 module.exports.getUser=getUser
+

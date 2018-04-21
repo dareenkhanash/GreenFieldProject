@@ -33,6 +33,9 @@ var createJob = function(data, callback){
 	Jobs.create(data, callback)
 };
 
+// i think we don't need to pass data because 
+// it's gonna retrive all the jobs n the schema 
+// idk though
 var allJobs = function (data, callback){
 	Jobs.find({}, function(err, data){
 		if (err){
@@ -78,9 +81,13 @@ var jobsByEndTime = function(to, callback){
 	});
 };
 
-var updateJob = function(jobTitle, updatedData, callback){
+var updateJobs = function(jobTitle, updatedData, callback){
 	Jobs.findOneAndUpdate({jobTitle: jobTitle},  { $set: updatedData}, callback)
 };
+
+var deleteJob = function(jobTitle, callback){
+  Jobs.deleteOne({jobTitle: jobTitle}, callback)
+}
 
 
 // Exporting the Model and the functions
@@ -92,3 +99,4 @@ module.exports.jobsByCatagory = jobsByCatagory;
 module.exports.jobsByStartTime = jobsByStartTime;
 module.exports.jobsByEndTime = jobsByEndTime;
 module.exports.updateJob = updateJob;
+module.exports.deleteJob = deleteJob;
