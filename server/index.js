@@ -7,7 +7,6 @@ var Users=require('./Models/users');
 //app.use(express.static(__dirname + '/../react-client/dist'));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 app.post("/",function(req,res){
 	var user=req.body
 	Users.createUsers(user,function(err,userdata){
@@ -20,9 +19,8 @@ app.post("/",function(req,res){
 
 })
 
-app.get('/:userName', function (req, res) {
-	
-  Users.getUser(req.params.userName,function(err,user){
+app.post('/:userName', function (req, res) {
+  Users.getUser(req.body.userName,req.body.password,function(err,user){
   		if(err){
 			console.log(err)
 		}else{
