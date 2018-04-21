@@ -20,9 +20,9 @@ app.post("/",function(req,res){
 
 })
 
-app.get('/:userName', function (req, res) {
+app.post('/:userName', function (req, res) {
 	
-  Users.getUser(req.params.userName,function(err,user){
+  Users.getUser(req.body.userName,req.body.password,function(err,user){
   		if(err){
 			console.log(err)
 		}else{
