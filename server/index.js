@@ -9,24 +9,24 @@ var Jobs = require('./Models/jobs');
 app.use(express.static(__dirname + '/../react-client/dist'));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.post("/",function(req,res){
+
+app.post("/",function(req, res){
 	var user = req.body;
 	Users.createUsers(user, function(err, userdata){
 		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(userdata);
 		}
 	});
 });
 
 
-
 app.post('/:userName', function (req, res) {
   Users.getUser(req.body.userName,req.body.password,function(err,user){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(user);
 		}
   });
@@ -38,7 +38,7 @@ app.put('/:userName', function (req, res) {
   Users.updateUsers(query, updatedData, function(err, users){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(users);
 		}
   });
@@ -49,7 +49,7 @@ app.delete('/:userName', function (req, res) {
   Users.deleteUser(query, function(err, users){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(users);
 		}
   });
@@ -64,7 +64,7 @@ app.get('/:jobTitle', function (req, res) {
     Jobs.allJobs({}, function(err, jobs){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(jobs);
 		}
   });
@@ -74,7 +74,7 @@ app.get('/:jobTitle', function (req, res) {
     Jobs.jobByTitle(req.params.jobTitle, function(err, job){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(job);
 		}
   });
@@ -85,7 +85,7 @@ app.get('/:jobCatagory', function (req, res) {
     Jobs.jobsByCatagory(req.params.category, function(err, job){
   		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(job);
 		}
   });
@@ -100,7 +100,7 @@ app.put('/:jobTitle', function(req, res){
 	Jobs.updateJobs(query, updatedData, function(err, jobs){
 		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(jobs);
 		}
 	});
@@ -111,7 +111,7 @@ app.delete('/:jobTitle', function(req, res){
 	Jobs.deleteJob(req.body.jobTitle, function(err, job){
 		if(err){
 			console.log(err);
-		}else{
+		} else {
 			res.send(job);
 		}
 	});
