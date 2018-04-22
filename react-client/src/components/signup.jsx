@@ -1,4 +1,7 @@
 import React from 'react';
+import axios from 'axios';
+import $ from 'jquery';
+
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -58,7 +61,7 @@ class SignUpForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://127.0.0.1:3000', this.state)
+        axios.post('/', this.state)
           .then(function (response) {
             console.log(response);
         })
