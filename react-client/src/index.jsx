@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import SignUpForm from './components/signup.jsx';
+import JobsForm from './components/jobsForm.jsx';
 import './styles/styles.scss'
 
 
@@ -29,9 +30,19 @@ class App extends React.Component {
   // }
 
   render () {
-    return (<div>
+    return (
+      <div>
+      <div>
       <SignUpForm/>
-    </div>)
+      </div>
+      <br/>
+      <div>
+      <JobsForm/>
+      </div>
+    </div>
+    
+      
+    )
   }
 }
 
