@@ -58,8 +58,13 @@ class SignUpForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        
-        console.log(this.state);
+        axios.post('http://127.0.0.1:3000', this.state)
+          .then(function (response) {
+            console.log(response);
+        })
+          .catch(function (error) {
+            console.log(error);
+        });
     };
        
  render() {
