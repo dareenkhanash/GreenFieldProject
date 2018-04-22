@@ -5,7 +5,8 @@ import SignUpForm from './components/signup.jsx';
 import JobsForm from './components/jobsForm.jsx';
 import NavBar from './components/navBar.jsx';
 import './styles/styles.scss'
-
+import axios from 'axios';
+//import Posts from './components/jobsPosts.jsx';
 
 
 class App extends React.Component {
@@ -16,31 +17,30 @@ class App extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   $.ajax({
-  //     url: '/items', 
-  //     success: (data) => {
-  //       this.setState({
-  //         items: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
+
+//  componentDidMount() {
+// axios.get('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => {
+//     const posts = response.data;
+//     // console.log(response);
+//     this.setState({items:posts});
+//      console.log(this.state);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+// }
 
   render () {
     return (
       <div>
-      <div>
-      <NavBar/>
-      </div>
-      <div>
-      <SignUpForm/>
-      </div>
-  
-    </div>
+        <div>
+         <NavBar/>
+        </div>
+        <div>
+         <SignUpForm/>
+        </div>
+     </div>
     
       
     )
