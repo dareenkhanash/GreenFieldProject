@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var db = require('../database-mongo');
 var app = express();
 var Users = require('./Models/users');
@@ -9,6 +10,13 @@ var Jobs = require('./Models/jobs');
 app.use(express.static(__dirname + '/../react-client/dist'));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// using sessions
+app.use(session({
+	secret: "",
+	resave: false,
+	saveUninitialized: true
+}));
 
 app.post("/",function(req, res){
 	var user = req.body;
