@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 
 class JobsForm extends React.Component {
 	constructor(props) {
@@ -18,7 +20,6 @@ class JobsForm extends React.Component {
 		this.onCategoryChange = this.onCategoryChange.bind(this);
 		this.onFromChange = this.onFromChange.bind(this);
 		this.onToChange = this.onToChange.bind(this);
-		this.onCreatedAtChange = this.onCreatedAtChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -44,10 +45,6 @@ class JobsForm extends React.Component {
 	};
 
 	onToChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onCreatedAtChange() {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
@@ -91,24 +88,12 @@ class JobsForm extends React.Component {
 			<input type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
 			</label> <br />
 
-			<label>Created at:
-			<input type = "date" name = "createdAt" placeholder = "createdAt" autoFocus onChange = {this.onCreatedAtChange} />
-			</label> <br />
-
 			<button>Add</button>
 			</form>
 			</div>
-
-
 			)
 	}
 }
-
-
-
-
-
-
 
 
 export default JobsForm;
