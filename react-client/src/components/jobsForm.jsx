@@ -11,8 +11,7 @@ class JobsForm extends React.Component {
 			jobDescription: '',
 			category: '',
 			from: '',
-			to: '',
-			createdAt: ''
+			to: ''
 		}
 		this.onUserChange = this.onUserChange.bind(this);
 		this.onJobTitleChange = this.onJobTitleChange.bind(this);
@@ -50,7 +49,7 @@ class JobsForm extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		axios.post('http://127.0.0.1:3000/', this.state)
+		axios.post('/', this.state)
   			.then(function (response) {
     		console.log(response);
   			})
