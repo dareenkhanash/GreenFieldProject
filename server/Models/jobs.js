@@ -98,5 +98,5 @@ module.exports.jobByTitle = jobByTitle;
 module.exports.jobsByCatagory = jobsByCatagory;
 module.exports.jobsByStartTime = jobsByStartTime;
 module.exports.jobsByEndTime = jobsByEndTime;
-module.exports.updateJob = updateJob;
+module.exports.updateJobs = updateJobs;
 module.exports.deleteJob = deleteJob;
