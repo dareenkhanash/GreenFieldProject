@@ -1,21 +1,35 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var session = require('express-session');
 var db = require('../database-mongo');
 var app = express();
 var Users = require('./Models/users');
 var Jobs = require('./Models/jobs');
+var session = require('express-session');
 
 //using react
 app.use(express.static(__dirname + '/../react-client/dist'));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// generate a random secret for the session
+var generateSecret = function (){
+  var j, x;
+  var random = ["f", "b", "C", "v", "I", "f", "N", "E", "j", "w", "i", "H", "N", "H", "z", "7", "n", "n", "a", "3", "V", "I", "Q", "J", "Q"]
+  for (var i = random.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = random[i];
+      random[i] = random[j];
+      random[j] = x;
+  }
+  return random.join('');
+};
+
 // using sessions
 app.use(session({
-	secret: "",
-	resave: false,
-	saveUninitialized: true
+  secret: generateSecret(),
+  resave: false,
+  saveUninitialized: false,
+  // cookie: { secure: true }
 }));
 
 app.post("/",function(req, res){
