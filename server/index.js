@@ -29,10 +29,9 @@ app.use(session({
   secret: generateSecret(),
   resave: false,
   saveUninitialized: false,
-  // cookie: { secure: true }
 }));
 
-app.post("/",function(req, res){
+app.post("/", function(req, res){
 	var user = req.body;
 	Users.createUsers(user, function(err, userdata){
 		if(err){
@@ -43,9 +42,41 @@ app.post("/",function(req, res){
 	});
 });
 
+//login page 
+app.post('/login', function(req, res){
+	var userName = req.userName
+	var password = req.password
+	Users.getUser(userName, password,  function (err, userName){
+		//this function will check the username and password
+		// if the username is not found 
+		if (err){
+			return res.send(err);
+		} if (!userName){
+			res.redirect('/login');
+		} else {
+			// need to create sessions here
+			// if it was there it will take him to the main page
+			res.session.user = userName
+			res.redirect('/Dashboard');
+		}
+	});
+});
+
+app.post('/Dashboard', function(req, res){
+	if(!req.session.user){
+		res.redirect('/login')
+	}
+});
+
+// destroy sessions when logout
+app.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.send("logout success!");
+});
+
 
 app.post('/:userName', function (req, res) {
-  Users.getUser(req.body.userName,req.body.password,function(err,user){
+  Users.getUser(req.body.userName, req.body.password, function(err, user){
   		if(err){
 			console.log(err);
 		} else {
