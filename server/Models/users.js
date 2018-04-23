@@ -13,18 +13,20 @@ var usersSchema = mongoose.Schema({
         type: String,
         required: true
       },
+  email:String,
   password: String,
+  email:String,
   gender: String,
   phoneNumber: {
         type: Number,
         required: true
       },
-  Address: String,
-  Age: {
+  address: String,
+  age: {
         type: Number,
         required: true
       },
-  Nationality: String
+  nationality: String
 });
 
 //User Model

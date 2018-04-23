@@ -6,46 +6,25 @@ import { Button, FormControl, Row, Col, ButtonToolbar } from 'react-bootstrap';
 class JobsForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
+		this.state = {states:{
 			user: '',
 			jobTitle: '',
 			jobDescription: '',
 			category: '',
 			from: '',
-			to: ''
+			to: ''}
+
 		}
-		this.onUserChange = this.onUserChange.bind(this);
-		this.onJobTitleChange = this.onJobTitleChange.bind(this);
-		this.onJobDescriptionChange = this.onJobDescriptionChange.bind(this);
-		this.onCategoryChange = this.onCategoryChange.bind(this);
-		this.onFromChange = this.onFromChange.bind(this);
-		this.onToChange = this.onToChange.bind(this);
+		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	onUserChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-		
-	};
-
-	onJobTitleChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onJobDescriptionChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onCategoryChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onFromChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onToChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
+	onChange(e) {
+	  var states = this.state.states;
+      var name = e.target.name;
+      var value = e.target.value;
+      states[name] = value;
+      this.setState({states});
 	};
 
 	handleSubmit(event) {
@@ -72,14 +51,14 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onUserChange} />
+			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onChange} />
 			</label></Col>
 			<Col md="2">
 			<span>Job Title</span>
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange = {this.onJobTitleChange} />
+			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange = {this.onChange} />
 			</label></Col>
 			<Col md="1">
 			</Col>
@@ -94,14 +73,14 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange = {this.onJobDescriptionChange} />
+			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange = {this.onChange} />
 			</label></Col>
 			<Col md="2">
 			<span>Category</span>
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange = {this.onCategoryChange} />
+			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange = {this.onChange} />
 			</label> </Col>
 			<Col md="1">
 			</Col> 
@@ -115,14 +94,14 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onFromChange} />
+			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onChange} />
 			</label> </Col>
 			<Col md="2">
 			<span>To</span>
 			</Col>
 			<Col md="3">
 			<label >
-			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
+			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onChange} />
 			</label></Col>
 			<Col md="1">
 			</Col>
@@ -130,6 +109,7 @@ class JobsForm extends React.Component {
 			    <Button bsStyle="success" bsSize="large">
 				      Submit
 			    </Button>	
+
 			</form>
 			</div>
 			)
