@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom';
 
 const Header = () => (
 	<header>
-		<h1>***Welcome to Juggernaut App***</h1>
 		<ul>
 		<li><NavLink to = "/" activeClassName = "is-active" exact = {true}>Home</NavLink></li>
 		<li><NavLink to = "/login" activeClassName = "is-active" >Login</NavLink></li>

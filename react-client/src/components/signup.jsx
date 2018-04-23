@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
+import { Button, FormControl } from 'react-bootstrap';
 
 
 class SignUpForm extends React.Component {
@@ -44,6 +45,7 @@ class SignUpForm extends React.Component {
     <div><br />
       <form onSubmit = {this.handleSubmit}>
       <label >Name:
+
         <input type="text" name="name" placeholder="Name" autoFocus
         onChange = {this.onChange}
         />
@@ -81,8 +83,9 @@ class SignUpForm extends React.Component {
         <label >Nationality: 
          <input type="text" name="nationality" placeholder="Nationality" 
           onChange={this.onChange} />
+
         </label><br />
-      <button>Submit</button>           
+      <Button bsStyle="success" bsSize="large">Submit</Button> 
       </form>
 	</div>
     )

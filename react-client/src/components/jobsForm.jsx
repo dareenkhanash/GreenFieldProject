@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Button, FormControl } from 'react-bootstrap';
 
 
 class JobsForm extends React.Component {
@@ -40,9 +41,10 @@ class JobsForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div><br />
 			<form onSubmit={this.handleSubmit}>
 			<label>User:
+
 			<input type = "text" name = "user" placeholder = "Enter your username" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
@@ -64,9 +66,10 @@ class JobsForm extends React.Component {
 
 			<label>To:
 			<input type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onChange} />
+
 			</label> <br />
 
-			<button>Add</button>
+			<Button bsStyle="success" bsSize="large">Add</Button>
 			</form>
 			</div>
 			)
