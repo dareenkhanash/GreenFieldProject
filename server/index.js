@@ -1,17 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var db = require('../database-mongo');
-var app = express();
-var Users = require('./Models/users');
+var Users=require('./Models/users');
 var Jobs = require('./Models/jobs');
-var session = require('express-session');
-
-//using react
-app.use(express.static(__dirname + '/../react-client/dist'));
-//app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// generate a random secret for the session
+var cookieParser=require('cookie-parser');
+var session=require('express-session');
+var expressValidtor=require('express-validator');
+var mongoStore=require('connect-mongo')(session);
 var generateSecret = function (){
   var j, x;
   var random = ["f", "b", "C", "v", "I", "f", "N", "E", "j", "w", "i", "H", "N", "H", "z", "7", "n", "n", "a", "3", "V", "I", "Q", "J", "Q"]
@@ -23,17 +19,29 @@ var generateSecret = function (){
   }
   return random.join('');
 };
-
-// using sessions
+var app = express();
+//using react
+app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(expressValidtor());
 app.use(session({
-  secret: generateSecret(),
-  resave: false,
-  saveUninitialized: false,
-}));
-
-app.post("/", function(req, res){
-	var user = req.body;
-	Users.createUsers(user, function(err, userdata){
+	secret:generateSecret(),
+	saveUninitialized:false,
+	resave:false,
+	store:new mongoStore({mongooseConnection:mongoose.connection}),
+	cookie:{maxAge:180*60*1000}
+	}));
+// app.use(function(req,res,next){
+// 	res.locals.session=req.session;
+// 	next();
+// })
+app.get('/',function(req,res){
+});
+app.post("/signup",function(req,res){
+	var user=req.body
+	Users.createUsers(user,function(err,userdata){
 		if(err){
 			console.log(err);
 		} else {
@@ -75,11 +83,16 @@ app.get('/logout', function (req, res) {
 });
 
 
-app.post('/:userName', function (req, res) {
-  Users.getUser(req.body.userName, req.body.password, function(err, user){
+
+app.post('/login', function (req, res) {
+  Users.getUser(req.body.userName,req.body.password,function(err,user){
   		if(err){
-			console.log(err);
-		} else {
+			console.log(err)
+		}else{
+			req.session.userName=user.userName;
+			req.session.password=user.password;
+			res.locals.login=user;
+			res.locals.session=req.session;
 			res.send(user);
 		}
   });

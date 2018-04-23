@@ -18,4 +18,4 @@ db.once('open', function() {
 
 
 
-// module.exports.selectAll = selectAll;
+ module.exports.db = db;
