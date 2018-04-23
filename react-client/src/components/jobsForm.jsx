@@ -29,9 +29,9 @@ class JobsForm extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		axios.post('/', this.state)
+		axios.post('/job', this.state.states)
   			.then(function (response) {
-    		//console.log(response);
+    		console.log(response);
   			})
   			.catch(function (error) {
     		console.log(error);
@@ -106,7 +106,7 @@ class JobsForm extends React.Component {
 			<Col md={1}>
 			</Col>
 			</Row><br /><br />
-			    <Button bsStyle="success" bsSize="large">
+			    <Button type="submit" bsSize="large">
 				      Submit
 			    </Button>	
 

@@ -16,8 +16,8 @@ var jobsSchema = mongoose.Schema({
   	type: String,
   	require:true
   },
-  from: Number,
-  to: Number,
+  from: String,
+  to: String,
   created_at: 
   {
     type:Date,
