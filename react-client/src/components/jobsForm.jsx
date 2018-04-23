@@ -6,46 +6,25 @@ import { Button, FormControl } from 'react-bootstrap';
 class JobsForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
+		this.state = {states:{
 			user: '',
 			jobTitle: '',
 			jobDescription: '',
 			category: '',
 			from: '',
-			to: ''
+			to: ''}
+
 		}
-		this.onUserChange = this.onUserChange.bind(this);
-		this.onJobTitleChange = this.onJobTitleChange.bind(this);
-		this.onJobDescriptionChange = this.onJobDescriptionChange.bind(this);
-		this.onCategoryChange = this.onCategoryChange.bind(this);
-		this.onFromChange = this.onFromChange.bind(this);
-		this.onToChange = this.onToChange.bind(this);
+		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	onUserChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-		
-	};
-
-	onJobTitleChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onJobDescriptionChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onCategoryChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onFromChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	};
-
-	onToChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
+	onChange(e) {
+	  var states = this.state.states;
+      var name = e.target.name;
+      var value = e.target.value;
+      states[name] = value;
+      this.setState({states});
 	};
 
 	handleSubmit(event) {
@@ -65,27 +44,29 @@ class JobsForm extends React.Component {
 			<div><br />
 			<form onSubmit={this.handleSubmit}>
 			<label>User:
-			<FormControl type = "text" name = "user" placeholder = "Your Username" autoFocus onChange = {this.onUserChange} />
+
+			<input type = "text" name = "user" placeholder = "Enter your username" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
 			<label>Job Title:
-			<FormControl type = "text" name = "jobTitle" placeholder = "Your Job Title" autoFocus onChange = {this.onJobTitleChange} />
+			<input type = "text" name = "jobTitle" placeholder = "Enter your job title" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
 			<label>Job Description:
-			<FormControl type = "text" name = "jobDescription" placeholder = "Your Job Description" autoFocus onChange = {this.onJobDescriptionChange} />
+			<input type = "text" name = "jobDescription" placeholder = "Enter your job description" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
 			<label>Category:
-			<FormControl type = "text" name = "category" placeholder = "Your Job Category" autoFocus onChange = {this.onCategoryChange} />
+			<input type = "text" name = "category" placeholder = "Enter your job category" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
 			<label>From:
-			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onFromChange} />
+			<input type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onChange} />
 			</label> <br />
 
 			<label>To:
-			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
+			<input type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onChange} />
+
 			</label> <br />
 
 			<Button bsStyle="success" bsSize="large">Add</Button>

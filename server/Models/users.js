@@ -13,6 +13,7 @@ var usersSchema = mongoose.Schema({
         type: String,
         required: true
       },
+  email:String,
   password: String,
   email:String,
   gender: String,
