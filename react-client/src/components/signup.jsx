@@ -84,7 +84,7 @@ class SignUpForm extends React.Component {
           onChange={this.onChange} />
         </label><br /><br />
 
-      <Button bsStyle="success" bsSize="large">Submit</Button> 
+      <Button bsStyle="success" type="submit" bsSize="large">Submit</Button> 
       </form>
 	</div>
     )
