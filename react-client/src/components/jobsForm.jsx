@@ -31,7 +31,7 @@ class JobsForm extends React.Component {
 		event.preventDefault();
 		axios.post('/', this.state)
   			.then(function (response) {
-    		console.log(response);
+    		//console.log(response);
   			})
   			.catch(function (error) {
     		console.log(error);
@@ -44,66 +44,66 @@ class JobsForm extends React.Component {
 			<div className="container-fluid"><br />
 			<form onSubmit={this.handleSubmit}>
 			<Row>
-			<Col md="1">
+			<Col md={1}>
 			</Col>
-			<Col md="2">
+			<Col md={2}>
 			<span>User</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onChange} />
 			</label></Col>
-			<Col md="2">
+			<Col md={2}>
 			<span>Job Title</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange = {this.onChange} />
 			</label></Col>
-			<Col md="1">
+			<Col md={1}>
 			</Col>
 			</Row> <br />
 
 
 			<Row>
-			<Col md="1">
+			<Col md={1}>
 			</Col> 
-			<Col md="2">
+			<Col md={2}>
 			<span>Job Description</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange = {this.onChange} />
 			</label></Col>
-			<Col md="2">
+			<Col md={2}>
 			<span>Category</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange = {this.onChange} />
 			</label> </Col>
-			<Col md="1">
+			<Col md={1}>
 			</Col> 
 			</Row><br />
 
 			<Row>
-			<Col md="1">
+			<Col md={1}>
 			</Col> 
-			<Col md="2">
+			<Col md={2}>
 			<span>From</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onChange} />
 			</label> </Col>
-			<Col md="2">
+			<Col md={2}>
 			<span>To</span>
 			</Col>
-			<Col md="3">
+			<Col md={3}>
 			<label >
 			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onChange} />
 			</label></Col>
-			<Col md="1">
+			<Col md={1}>
 			</Col>
 			</Row><br /><br />
 			    <Button bsStyle="success" bsSize="large">

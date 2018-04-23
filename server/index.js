@@ -39,6 +39,11 @@ app.use(session({
 // })
 app.get('/',function(req,res){
 });
+app.get('/:userName',function(req,res){
+	if(req.session.userName){
+		res.send(req.session.userName)
+	}
+});
 app.post("/signup",function(req,res){
 	var user=req.body
 	Users.createUsers(user,function(err,userdata){
@@ -85,15 +90,16 @@ app.get('/logout', function (req, res) {
 
 
 app.post('/login', function (req, res) {
-  Users.getUser(req.body.userName,req.body.password,function(err,user){
+  Users.getUser(req.body.userName,req.body.password,function(err, user){
   		if(err){
 			console.log(err)
-		}else{
-			req.session.userName=user.userName;
-			req.session.password=user.password;
-			res.locals.login=user;
-			res.locals.session=req.session;
-			res.send(user);
+		} else {
+			req.session.userName = user.userName;
+			req.session.password = user.password;
+			res.locals.login = user;
+			res.locals.session = req.session;
+			res.redirect('/:userName');
+			//res.send();
 		}
   });
 });

@@ -10,6 +10,7 @@ class SignUpForm extends React.Component {
     this.state = {states:{
         name: '',
         userName: '',
+        password: '',
         email: '',
         gender: '',
         phoneNumber: '',
@@ -30,8 +31,8 @@ class SignUpForm extends React.Component {
     };
 
     handleSubmit(event) {
-        event.preventDefault();
-        axios.post('/', this.state.states)
+        // event.preventDefault();
+        axios.post('/signup', this.state.states)
           .then(function (response) {
             console.log(response);
         })
@@ -51,6 +52,11 @@ class SignUpForm extends React.Component {
       </label><br />
       <label className="well">User Name
         <FormControl type="text" name="userName" placeholder="User Name" 
+        onChange = {this.onChange}
+        />
+      </label><br />
+      <label className="well">Password
+        <FormControl type="password" name="password" placeholder="Password" autoFocus
         onChange = {this.onChange}
         />
       </label><br />
@@ -84,7 +90,9 @@ class SignUpForm extends React.Component {
           onChange={this.onChange} />
         </label><br /><br />
 
-      <Button bsStyle="success" type="submit" bsSize="large">Submit</Button> 
+
+      <Button type = "submit" bsStyle="success" bsSize="large">Submit</Button> 
+
       </form>
 	</div>
     )
