@@ -51,24 +51,24 @@ app.post("/signup",function(req,res){
 });
 
 //login page 
-app.post('/login', function(req, res){
-	var userName = req.userName
-	var password = req.password
-	Users.getUser(userName, password,  function (err, userName){
-		//this function will check the username and password
-		// if the username is not found 
-		if (err){
-			return res.send(err);
-		} if (!userName){
-			res.redirect('/login');
-		} else {
-			// need to create sessions here
-			// if it was there it will take him to the main page
-			res.session.user = userName
-			res.redirect('/Dashboard');
-		}
-	});
-});
+// app.post('/login', function(req, res){
+// 	var userName = req.userName
+// 	var password = req.password
+// 	Users.getUser(userName, password,  function (err, userName){
+// 		//this function will check the username and password
+// 		// if the username is not found 
+// 		if (err){
+// 			return res.send(err);
+// 		} if (!userName){
+// 			res.redirect('/login');
+// 		} else {
+// 			// need to create sessions here
+// 			// if it was there it will take him to the main page
+// 			res.session.user = userName
+// 			//res.redirect('/Dashboard');
+// 		}
+// 	});
+// });
 
 app.post('/Dashboard', function(req, res){
 	if(!req.session.user){
