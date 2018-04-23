@@ -6,8 +6,8 @@ const NavBar = (props) => (
     <li><a className="active" href="#home">Home</a></li>
   </ul>
   <ul>
-    <li><a href="#news">Sign up</a></li>
-    <li><a href="#contact">Log in</a></li>
+    <li><a href="#SingUp">Sign up</a></li>
+    <li><a href="#LogIn">Log in</a></li>
   </ul>
 
   </div>
