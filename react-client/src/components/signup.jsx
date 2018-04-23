@@ -73,47 +73,47 @@ class SignUpForm extends React.Component {
        
  render() {
     return (
-    <div><br />
+    <div ><br />
       <form onSubmit = {this.handleSubmit}>
-      <label >Name:
+      <label className="well">Name
         <FormControl type="text" name="name" placeholder="Name" autoFocus
         onChange = {this.onNameChange}
         />
       </label><br />
-      <label >User Name:
+      <label className="well">User Name
         <FormControl type="text" name="userName" placeholder="User Name" 
         onChange = {this.onUserNameChange}
         />
       </label><br />
-       <label >Email: 
+       <label className="well">Email:
         <FormControl type="email" name="email" placeholder="Email" 
           onChange={this.onEmailChange} />
         </label><br />
         
-        <label >Gender: 
+        <label className="well">Gender
         <FormControl type="text" name="gender" placeholder="Gender" 
           onChange={this.onGenderChange} />
         </label><br />
         
-        <label >Phone Number: 
+        <label className="well">Phone Number 
         <FormControl type="number" name="phone" placeholder="Phone Number" 
           onChange={this.onPhoneNumberChange} />
         </label><br />
         
-        <label >Address: 
+        <label className="well">Address
         <FormControl type="text" name="address" placeholder="Address" 
           onChange={this.onAddressChange} />
         </label><br />
         
-        <label >Age: 
+        <label className="well">Age
          <FormControl type="number" name="age" placeholder="Age" 
           onChange={this.onAgeChange} />
         </label><br />
         
-        <label >Nationality: 
+        <label className="well">Nationality
          <FormControl type="text" name="nationality" placeholder="Nationality" 
           onChange={this.onNationalityChange} />
-        </label><br />
+        </label><br /><br />
       <Button bsStyle="success" bsSize="large">Submit</Button> 
       </form>
 	</div>

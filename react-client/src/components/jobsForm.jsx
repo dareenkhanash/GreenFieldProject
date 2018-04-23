@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Button, FormControl } from 'react-bootstrap';
+import { Button, FormControl, Row, Col, ButtonToolbar } from 'react-bootstrap';
 
 
 class JobsForm extends React.Component {
@@ -62,33 +62,74 @@ class JobsForm extends React.Component {
 
 	render() {
 		return (
-			<div><br />
+			<div className="container-fluid"><br />
 			<form onSubmit={this.handleSubmit}>
-			<label>User:
-			<FormControl type = "text" name = "user" placeholder = "Your Username" autoFocus onChange = {this.onUserChange} />
-			</label> <br />
+			<Row>
+			<Col md="1">
+			</Col>
+			<Col md="2">
+			<span>User</span>
+			</Col>
+			<Col md="3">
+			<label >
+			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onUserChange} />
+			</label></Col>
+			<Col md="2">
+			<span>Job Title</span>
+			</Col>
+			<Col md="3">
+			<label >
+			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange = {this.onJobTitleChange} />
+			</label></Col>
+			<Col md="1">
+			</Col>
+			</Row> <br />
 
-			<label>Job Title:
-			<FormControl type = "text" name = "jobTitle" placeholder = "Your Job Title" autoFocus onChange = {this.onJobTitleChange} />
-			</label> <br />
 
-			<label>Job Description:
-			<FormControl type = "text" name = "jobDescription" placeholder = "Your Job Description" autoFocus onChange = {this.onJobDescriptionChange} />
-			</label> <br />
+			<Row>
+			<Col md="1">
+			</Col> 
+			<Col md="2">
+			<span>Job Description</span>
+			</Col>
+			<Col md="3">
+			<label >
+			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange = {this.onJobDescriptionChange} />
+			</label></Col>
+			<Col md="2">
+			<span>Category</span>
+			</Col>
+			<Col md="3">
+			<label >
+			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange = {this.onCategoryChange} />
+			</label> </Col>
+			<Col md="1">
+			</Col> 
+			</Row><br />
 
-			<label>Category:
-			<FormControl type = "text" name = "category" placeholder = "Your Job Category" autoFocus onChange = {this.onCategoryChange} />
-			</label> <br />
-
-			<label>From:
+			<Row>
+			<Col md="1">
+			</Col> 
+			<Col md="2">
+			<span>From</span>
+			</Col>
+			<Col md="3">
+			<label >
 			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onFromChange} />
-			</label> <br />
-
-			<label>To:
+			</label> </Col>
+			<Col md="2">
+			<span>To</span>
+			</Col>
+			<Col md="3">
+			<label >
 			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
-			</label> <br />
-
-			<Button bsStyle="success" bsSize="large">Add</Button>
+			</label></Col>
+			<Col md="1">
+			</Col>
+			</Row><br /><br />
+			    <Button bsStyle="success" bsSize="large">
+				      Submit
+			    </Button>	
 			</form>
 			</div>
 			)
