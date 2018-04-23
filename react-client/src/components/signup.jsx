@@ -42,49 +42,48 @@ class SignUpForm extends React.Component {
        
  render() {
     return (
-    <div><br />
+    <div ><br />
       <form onSubmit = {this.handleSubmit}>
-      <label >Name:
-
-        <input type="text" name="name" placeholder="Name" autoFocus
+      <label className="well">Name
+        <FormControl type="text" name="name" placeholder="Name" autoFocus
         onChange = {this.onChange}
         />
       </label><br />
-      <label >User Name:
-        <input type="text" name="userName" placeholder="User Name" 
+      <label className="well">User Name
+        <FormControl type="text" name="userName" placeholder="User Name" 
         onChange = {this.onChange}
         />
       </label><br />
-       <label >Email: 
-        <input type="email" name="email" placeholder="Email" 
+       <label className="well">Email:
+        <FormControl type="email" name="email" placeholder="Email" 
           onChange={this.onChange} />
         </label><br />
         
-        <label >Gender: 
-        <input type="text" name="gender" placeholder="Gender" 
+        <label className="well">Gender
+        <FormControl type="text" name="gender" placeholder="Gender" 
           onChange={this.onChange} />
         </label><br />
         
-        <label >Phone Number: 
-        <input type="number" name="phoneNumber" placeholder="Phone Number" 
+        <label className="well">Phone Number 
+        <FormControl type="number" name="phoneNumber" placeholder="Phone Number" 
           onChange={this.onChange} />
         </label><br />
         
-        <label >Address: 
-        <input type="text" name="address" placeholder="Address" 
+        <label className="well">Address
+        <FormControl type="text" name="address" placeholder="Address" 
           onChange={this.onChange} />
         </label><br />
         
-        <label >Age: 
-         <input type="number" name="age" placeholder="Age" 
+        <label className="well">Age
+         <FormControl type="number" name="age" placeholder="Age" 
           onChange={this.onChange} />
         </label><br />
         
-        <label >Nationality: 
-         <input type="text" name="nationality" placeholder="Nationality" 
+        <label className="well">Nationality
+         <FormControl type="text" name="nationality" placeholder="Nationality" 
           onChange={this.onChange} />
+        </label><br /><br />
 
-        </label><br />
       <Button bsStyle="success" bsSize="large">Submit</Button> 
       </form>
 	</div>
