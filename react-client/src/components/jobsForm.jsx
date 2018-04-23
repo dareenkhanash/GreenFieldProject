@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Button, FormControl } from 'react-bootstrap';
 
 
 class JobsForm extends React.Component {
@@ -61,33 +62,33 @@ class JobsForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div><br />
 			<form onSubmit={this.handleSubmit}>
 			<label>User:
-			<input type = "text" name = "user" placeholder = "Enter your username" autoFocus onChange = {this.onUserChange} />
+			<FormControl type = "text" name = "user" placeholder = "Your Username" autoFocus onChange = {this.onUserChange} />
 			</label> <br />
 
 			<label>Job Title:
-			<input type = "text" name = "jobTitle" placeholder = "Enter your job title" autoFocus onChange = {this.onJobTitleChange} />
+			<FormControl type = "text" name = "jobTitle" placeholder = "Your Job Title" autoFocus onChange = {this.onJobTitleChange} />
 			</label> <br />
 
 			<label>Job Description:
-			<input type = "text" name = "jobDescription" placeholder = "Enter your job description" autoFocus onChange = {this.onJobDescriptionChange} />
+			<FormControl type = "text" name = "jobDescription" placeholder = "Your Job Description" autoFocus onChange = {this.onJobDescriptionChange} />
 			</label> <br />
 
 			<label>Category:
-			<input type = "text" name = "category" placeholder = "Enter your job category" autoFocus onChange = {this.onCategoryChange} />
+			<FormControl type = "text" name = "category" placeholder = "Your Job Category" autoFocus onChange = {this.onCategoryChange} />
 			</label> <br />
 
 			<label>From:
-			<input type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onFromChange} />
+			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onFromChange} />
 			</label> <br />
 
 			<label>To:
-			<input type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
+			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onToChange} />
 			</label> <br />
 
-			<button>Add</button>
+			<Button bsStyle="success" bsSize="large">Add</Button>
 			</form>
 			</div>
 			)

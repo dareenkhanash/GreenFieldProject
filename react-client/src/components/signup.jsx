@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
+import { Button, FormControl } from 'react-bootstrap';
 
 
 class SignUpForm extends React.Component {
@@ -75,45 +76,45 @@ class SignUpForm extends React.Component {
     <div><br />
       <form onSubmit = {this.handleSubmit}>
       <label >Name:
-        <input type="text" name="name" placeholder="Name" autoFocus
+        <FormControl type="text" name="name" placeholder="Name" autoFocus
         onChange = {this.onNameChange}
         />
       </label><br />
       <label >User Name:
-        <input type="text" name="userName" placeholder="User Name" 
+        <FormControl type="text" name="userName" placeholder="User Name" 
         onChange = {this.onUserNameChange}
         />
       </label><br />
        <label >Email: 
-        <input type="email" name="email" placeholder="Email" 
+        <FormControl type="email" name="email" placeholder="Email" 
           onChange={this.onEmailChange} />
         </label><br />
         
         <label >Gender: 
-        <input type="text" name="gender" placeholder="Gender" 
+        <FormControl type="text" name="gender" placeholder="Gender" 
           onChange={this.onGenderChange} />
         </label><br />
         
         <label >Phone Number: 
-        <input type="number" name="phone" placeholder="Phone Number" 
+        <FormControl type="number" name="phone" placeholder="Phone Number" 
           onChange={this.onPhoneNumberChange} />
         </label><br />
         
         <label >Address: 
-        <input type="text" name="address" placeholder="Address" 
+        <FormControl type="text" name="address" placeholder="Address" 
           onChange={this.onAddressChange} />
         </label><br />
         
         <label >Age: 
-         <input type="number" name="age" placeholder="Age" 
+         <FormControl type="number" name="age" placeholder="Age" 
           onChange={this.onAgeChange} />
         </label><br />
         
         <label >Nationality: 
-         <input type="text" name="nationality" placeholder="Nationality" 
+         <FormControl type="text" name="nationality" placeholder="Nationality" 
           onChange={this.onNationalityChange} />
         </label><br />
-      <button>Submit</button>           
+      <Button bsStyle="success" bsSize="large">Submit</Button> 
       </form>
 	</div>
     )
