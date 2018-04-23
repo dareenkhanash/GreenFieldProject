@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import $ from 'jquery';
-import SignUp from './components/signup.jsx';
-import './styles/styles.scss'
-
+import './styles/styles.scss';
+import AppRouter from './routes/AppRouter.jsx';
 
 
 class App extends React.Component {
@@ -14,25 +14,20 @@ class App extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   $.ajax({
-  //     url: '/items', 
-  //     success: (data) => {
-  //       this.setState({
-  //         items: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
 
-  render () {
-    return (<div>
-      <SignUp/>
-    </div>)
-  }
+//  componentDidMount() {
+// axios.get('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => {
+//     const posts = response.data;
+//     // console.log(response);
+//     this.setState({items:posts});
+//      console.log(this.state);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+// }
+ 
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));

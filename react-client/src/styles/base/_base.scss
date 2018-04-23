@@ -1,0 +1,57 @@
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: blue;
+	font-size: 1.6rem;
+	background-color: lightblue;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+#search {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+#posts {
+    font-family: Helvetica, Arial, sans-serif;
+    color: blue;
+    font-size: 1.6rem;
+    background-color: lightblue;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.is-active) {
+    background-color: #111;
+}
+
+.is-active {
+    background-color: #4CAF50;
+ 
+}
