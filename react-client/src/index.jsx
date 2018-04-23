@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import SignUpForm from './components/signup.jsx';
-import JobsForm from './components/jobsForm.jsx';
-import NavBar from './components/navBar.jsx';
-import './styles/styles.scss'
 import axios from 'axios';
-//import Posts from './components/jobsPosts.jsx';
+import $ from 'jquery';
+import './styles/styles.scss';
+import AppRouter from './routes/AppRouter.jsx';
 
 
 class App extends React.Component {
@@ -30,21 +27,7 @@ class App extends React.Component {
 //     console.log(error);
 //   });
 // }
-
-  render () {
-    return (
-      <div>
-        <div>
-         <NavBar/>
-        </div>
-        <div>
-         <SignUpForm/>
-        </div>
-     </div>
-    
-      
-    )
-  }
+ 
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));
