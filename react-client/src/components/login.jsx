@@ -27,7 +27,7 @@ class Login extends React.Component {
 		event.preventDefault();
 		axios.post('/login', this.state.states)
   			.then(function (response) {
-    		console.log(response);
+    		window.location.href = "/";
   			})
   			.catch(function (error) {
     		console.log(error);

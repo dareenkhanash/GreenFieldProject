@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var redirect = require('express-redirect');
 var db = require('../database-mongo');
 var Users=require('./Models/users');
 var Jobs = require('./Models/jobs');
@@ -20,6 +21,7 @@ var generateSecret = function (){
   return random.join('');
 };
 var app = express();
+redirect(app);
 //using react
 app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(bodyParser.json());
@@ -38,6 +40,10 @@ app.use(session({
 // 	next();
 // })
 app.get('/',function(req,res){
+	console.log("sdjskd");
+});
+app.post('/',function(req,res){
+	res.send("hi");
 });
 app.get('/:userName',function(req,res){
 	if(req.session.userName){
@@ -95,11 +101,12 @@ app.post('/login', function (req, res) {
 			console.log(err)
 		} else {
 			req.session.userName = user.userName;
-			req.session.password = user.password;
-			res.locals.login = user;
-			res.locals.session = req.session;
-			res.redirect('/:userName');
-			//res.send();
+			// req.session.password = user.password;
+			// res.locals.login = user;
+			// res.locals.session = req.session;
+			
+			res.redirect('/');
+			
 		}
   });
 });
@@ -128,8 +135,15 @@ app.delete('/:userName', function (req, res) {
 });
 
 // Jobs commands 
-app.post('/:jobTitle', function(req, res){
-	Jobs.createJob(req.body)
+app.post('/job', function(req, res){
+	Jobs.createJob(req.body,function(err,jobs){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(jobs);
+			res.send(jobs);
+		}
+	})
 });
 
 app.get('/:jobTitle', function (req, res) {
