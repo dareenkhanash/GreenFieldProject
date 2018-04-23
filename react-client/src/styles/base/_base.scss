@@ -17,10 +17,6 @@ ul {
 }
 
 li {
-    float: right;
-}
-
-#home {
     float: left;
 }
 
@@ -51,11 +47,11 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+li a:hover:not(.is-active) {
     background-color: #111;
 }
 
-.active {
+.is-active {
     background-color: #4CAF50;
  
 }
