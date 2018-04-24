@@ -11,7 +11,7 @@ class HomeDisplay extends React.Component {
 render() {
   
   return (
-    <h1>{this.props.item.title}</h1>)
+    <h1>{this.props.item.jobTitle}</h1>)
   }
 }
 export default HomeDisplay;
