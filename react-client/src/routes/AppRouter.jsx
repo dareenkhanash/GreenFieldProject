@@ -5,13 +5,13 @@ import JobsForm from '../components/JobsForm.jsx';
 import Header from '../components/Header.jsx';
 import NotFoundPage from '../components/NotFoundPage.jsx';
 import Login from '../components/Login.jsx';
-
+import Home from '../components/Home.jsx';
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
 			<Header />
 			<Switch>
-			<Route path = "/" exact = {true} />	
+			<Route path = "/" exact = {true} component = {Home}/>	
 			<Route path = "/signup" component = {SignUpForm} />				
 			<Route path = "/jobsForm" component = {JobsForm} />		
 			<Route path = "/login"	component = {Login} />	
