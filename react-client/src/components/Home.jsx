@@ -12,22 +12,37 @@ class Home extends React.Component {
   }
 
   searchJobTitle(query) {
-    //console.log("search" + query)
-    let jobTitles = this.state.items.jobTitle.filter((title) => {
-      return title.jobTitle.includes(query)
-    });
-    //console.log(jobTitles)
-    this.setState({jobTitles: jobTitles})
+    // console.log( this.state.items)
+
+    // let jobTitles = this.state.items.filter((title) => {
+    //   return title.jobTitle.includes(query) 
+    // });
+    // //console.log(jobTitles)
+    
+    //   this.setState({items: jobTitles})
+ 
+    // console.log(this.state.items)
+    var that =this;
+     axios.post('/someJobs',{query:query})
+          .then(function (response) {
+            const posts = response.data;
+            that.setState({items:posts});
+
+        })
+          .catch(function (error) {
+            console.log(error);
+        });
+  
   }
 
 //make new get requests for each filter
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    axios.get('/jobs')
     .then(response => {
     const posts = response.data;
     // console.log(response);
     this.setState({items:posts});
-     console.log(this.state);
+    
   })
   .catch(function (error) {
     console.log(error);
@@ -41,7 +56,7 @@ render() {
       <h1> still loading </h1>
       )
   } else {
-    this.state.items.slice(80).forEach(function(item) {
+    this.state.items.forEach(function(item) {
       arr.push(<HomeDisplay item={item} />)
     })
   }

@@ -11,7 +11,6 @@ class Search extends React.Component {
   }
 
   handleInputChange(e) {
-    console.log(e.target.value)
     this.props.searchJobTitle(e.target.value)
     this.setState({
       value: e.target.value

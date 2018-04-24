@@ -1,21 +1,11 @@
-var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/jobsdb',{
-	useMongoClient:true
+var mongoose=require("mongoose");
+mongoose.connect("mongodb://localhost/jobsdb");
+
+var db =mongoose.connection;
+db.on("error",function(){
+	console.log("connection error");
+});
+db.once("open",function() {
+	console.log("connection opened");	
 });
 
-var db = mongoose.connection;
-
-db.on('error', function() {
-  console.log('mongoose connection error');
-});
-
-db.once('open', function() {
-  console.log('mongoose connected successfully');
-});
-
-
-
-
-
- module.exports.db = db;

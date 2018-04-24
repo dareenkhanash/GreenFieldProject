@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var redirect = require('express-redirect');
-var db = require('../database-mongo');
+var db = require('../database-mongo/index.js');
 var Users=require('./Models/users');
 var Jobs = require('./Models/jobs');
 var cookieParser=require('cookie-parser');
@@ -39,8 +39,15 @@ app.use(session({
 // 	res.locals.session=req.session;
 // 	next();
 // })
-app.get('/',function(req,res){
-	console.log("sdjskd");
+app.get('/jobs',function(req,res){
+	Jobs.allJobs(function(err, jobs){
+  		if(err){
+			console.log(err);
+		} else {
+			console.log("hoi");
+			 res.send(jobs);
+		}
+  });	
 });
 app.post('/',function(req,res){
 	res.send("hi");
@@ -146,8 +153,9 @@ app.post('/job', function(req, res){
 	})
 });
 
-app.get('/:jobTitle', function (req, res) {
-    Jobs.allJobs({}, function(err, jobs){
+app.post('/someJobs', function (req, res) {
+
+    Jobs.findSome(req.body.query, function(err, jobs){
   		if(err){
 			console.log(err);
 		} else {
