@@ -37,7 +37,7 @@ class Login extends React.Component {
 
 		render() {
     return (
-      <div className="Login">
+      <div className="Login container"><br />
         <form onSubmit={this.handleSubmit}>
           <FormGroup  bsSize="large">
             <ControlLabel>Username</ControlLabel>
@@ -55,7 +55,6 @@ class Login extends React.Component {
             />
           </FormGroup>
           <Button
-            block
             bsSize="large"
             type="submit"
           >

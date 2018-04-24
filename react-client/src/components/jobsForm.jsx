@@ -41,7 +41,7 @@ class JobsForm extends React.Component {
 
 	render() {
 		return (
-			<div className="container-fluid"><br />
+			<div className="container"><br />
 			<form onSubmit={this.handleSubmit}>
 			<Row>
 			<Col md={1}>

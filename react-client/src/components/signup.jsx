@@ -43,7 +43,7 @@ class SignUpForm extends React.Component {
        
  render() {
     return (
-    <div ><br />
+    <div className="container"><br />
       <form onSubmit = {this.handleSubmit}>
       <label className="well">Name
         <FormControl type="text" name="name" placeholder="Name" autoFocus
