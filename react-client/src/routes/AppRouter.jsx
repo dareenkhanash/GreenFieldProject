@@ -9,7 +9,7 @@ import Home from '../components/Home.jsx';
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
-			<NavBar /><br /><br /><br />
+			<NavBar /><br /><br />
 			<Switch>
 			<Route path = "/" exact = {true} component = {Home}/>	
 			<Route path = "/signup" component = {SignUpForm} />				

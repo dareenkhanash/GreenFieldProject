@@ -3,9 +3,9 @@ html {
 }
 body {
 	font-family: Rajdhani;
-	color: ROYALBLUE;
+	color: DARKBLUE;
 	font-size: 1.6rem;
-	background: linear-gradient(to top, #000000, #434343);
+	background: linear-gradient(to bottom, #ffeeee, #ddefbb);
 }
 
 ul {
@@ -56,6 +56,7 @@ li {
     color: white;
     text-align: center;
     padding: 14px 16px;
+    border-radius: 25%
 }
 
 li a:hover:not(.is-active) {
@@ -65,4 +66,24 @@ li a:hover:not(.is-active) {
 .is-active {
     background-color: STEELBLUE;
  
+}
+
+#search-button {
+    background-color: #DC143C;
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20%
+}
+
+.Sform-control {
+    height: 40px;
+    width: 175px;
+    font-size: 20px;
 }
