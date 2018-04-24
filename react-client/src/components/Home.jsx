@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import HomeDisplay from './HomeDisplay.jsx';
+import Search from './Search.jsx'
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -9,10 +11,19 @@ class Home extends React.Component {
     }
   }
 
+  searchJobTitle(query) {
+    //console.log("search" + query)
+    let jobTitles = this.state.items.jobTitle.filter((title) => {
+      return title.jobTitle.includes(query)
+    });
+    //console.log(jobTitles)
+    this.setState({jobTitles: jobTitles})
+  }
 
- componentDidMount() {
-axios.get('https://jsonplaceholder.typicode.com/posts')
-  .then(response => {
+//make new get requests for each filter
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
     const posts = response.data;
     // console.log(response);
     this.setState({items:posts});
@@ -22,6 +33,7 @@ axios.get('https://jsonplaceholder.typicode.com/posts')
     console.log(error);
   });
 }
+
 render() {
   var arr = [];
   if ( this.state.items.length === 0) {
@@ -34,8 +46,15 @@ render() {
     })
   }
   return (
+  
+    <div>
+    <br/>
+    <div>
+    <Search searchJobTitle={this.searchJobTitle.bind(this)}/>
+    </div>
     <div>
     {arr}
+    </div>
     </div>
     
     )
