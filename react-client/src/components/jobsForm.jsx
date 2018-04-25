@@ -14,7 +14,9 @@ class JobsForm extends React.Component {
 			from: '',
 			to: ''}
 
+			
 		}
+		this.baseState = this.state
 		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -25,10 +27,13 @@ class JobsForm extends React.Component {
       var value = e.target.value;
       states[name] = value;
       this.setState({states});
+      
 	};
+	
+	
 
 	handleSubmit(event) {
-		event.preventDefault();
+		//event.preventDefault();
 		axios.post('/job', this.state.states)
   			.then(function (response) {
     		console.log(response);
@@ -36,6 +41,10 @@ class JobsForm extends React.Component {
   			.catch(function (error) {
     		console.log(error);
   			});
+
+  			
+     //this.setState({this.baseState.states: null})
+
 		};
 
 	render() {
@@ -50,7 +59,8 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange={this.onChange} />
+
+			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onChange} value={this.state.states.user}/>
 			</label></Col>
 			<Col md={2}>
 			<span>Job Title</span>
@@ -105,7 +115,8 @@ class JobsForm extends React.Component {
 			<Col md={1}>
 			</Col>
 			</Row><br /><br />
-			    <Button onClick={this.delete} type="submit" bsSize="large">
+
+			    <Button onClick={this.submitForm} type="submit" bsSize="large">
 				      Submit
 			    </Button>	
 
