@@ -159,8 +159,8 @@ app.post('/someJobs', function (req, res) {
 
 
 
-app.get('/:jobCatagory', function (req, res) {
-	Jobs.jobsByCatagory(req.params.category, function(err, job){
+app.post('/jobCategory', function (req, res) {
+	Jobs.jobsByCategory(req.body.category, function(err, job){
 		if(err){
 			console.log(err);
 		} else {

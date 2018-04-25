@@ -41,18 +41,19 @@ var createJob = function(data, callback){
 var allJobs = function (callback){
   Jobs.find({}).exec(function(err, data){
     if(err){
-      callback(err,null)
+      callback(err, null)
     } else {
-    callback(null,data)}
+    callback(null, data)}
   });
 };
 
 var jobByTitle = function (jobTitle, callback){
   Jobs.findOne({jobTitle: jobTitle}, function(err, data){
     if(err){
-      throw err
-    }
-    callback(data)
+      callback(err, null)
+    } else {
+    callback(null, data)
+  }
   });
 };
 var findSome=function(title, callback){
@@ -60,10 +61,10 @@ var findSome=function(title, callback){
 var regexValue='\.*'+title+'\.';
   Jobs.find({"jobTitle":new RegExp(regexValue, 'i')}, function(err, data){
      if(err){
-      callback(err,null)
+      callback(err, null)
     } else {
-
-    callback(null,data)}
+    callback(null, data)
+  }
   });
 };
 var jobByUserName=function(userName,callback){
@@ -76,30 +77,34 @@ var jobByUserName=function(userName,callback){
     callback(null,data)}
   });
 };
-var jobsByCatagory = function(category, callback){
-  Jobs.findOne({category: category}, function(err, data){
+
+var jobsByCategory = function(category, callback){
+  Jobs.find({category: category}, function(err, data){
       if(err){
-      throw err
-    }
-    callback(data)
+      callback(err, null)
+    } else {
+    callback(null, data)
+  }
   });
 };
 
 var jobsByStartTime = function(from, callback){
   Jobs.find({from: from}, function(err, data){
     if(err){
-      throw err
-    }
-    callback(data)
+      callback(err, null)
+    } else {
+    callback(null, data)
+  }
   });
 };
 
 var jobsByEndTime = function(to, callback){
   Jobs.find({to: to}, function(err, data){
     if(err){
-      throw err
-    }
-    callback(data)
+      callback(err, null)
+    } else {
+    callback(null, data)
+  }
   });
 };
 

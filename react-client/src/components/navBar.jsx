@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = (props) => (
+const Nav = (props) => (
   <div>
   <ul id = "home">
     <li><a className="active" href="#home">Home</a></li>
@@ -12,4 +12,4 @@ const NavBar = (props) => (
   </div>
 )
 
-export default NavBar;
+export default Nav;

@@ -6,8 +6,12 @@ class Search extends React.Component {
     super(props);
 
     this.state = {
-      value: ''
+      value: '',
+      val: ''
     };
+
+    this.handleCategoryChange  = this.handleCategoryChange.bind(this);
+    this.handleInputChange  = this.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
@@ -17,24 +21,37 @@ class Search extends React.Component {
     });
   }
 
+  handleCategoryChange(e){
+    this.props.searchJobCategory(e.target.value)
+    this.setState({
+      val: e.target.value
+    });
+  }
+
   render() {
     return (
-      <div className="search-bar form-inline">
-        <DropdownButton title="Catagory" id="catB">
-      <MenuItem eventKey="1">Driver</MenuItem>
-      <MenuItem eventKey="2">Maintenance</MenuItem>
-      <MenuItem eventKey="3">Job3</MenuItem>
-      <MenuItem eventKey="4">Job4</MenuItem>
-      </DropdownButton>
-        <FormControl
+      <div className="search-bar form-inline">  
+      <div className="form-group">
+        <select onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-default" id="catB">
+          <option value="Select">Select Category</option>
+          <option value="Driver">Driver</option>
+          <option value="HomeMaintenance">Home Maintenance</option>
+          <option value="ComputerMaintenance">Computer Maintenance</option>
+          <option value="Babysitting">Babysitting</option>
+          <option value="Tutoring">Tutoring</option>
+          <option value="Others">Others</option>
+        </select>
+        </div>
+
+      <FormControl
           className="Sform-control"
           type="text"
           value={this.state.value}
-          onChange={this.handleInputChange.bind(this)}
+          onChange={this.handleInputChange}
           placeholder="Job Title"
         />
-         <Button id='search-button' className="btn hidden-sm-down">
-          <span className="glyphicon glyphicon-search"> </span>
+         <Button id='search-button' className="btn btn-default hidden-sm-down">
+          <span className="glyphicon glyphicon-search"></span>
          </Button>
       </div>
     );

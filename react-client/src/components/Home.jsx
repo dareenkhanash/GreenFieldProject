@@ -11,13 +11,25 @@ class Home extends React.Component {
     }
   }
 
-  searchJobTitle(query) {
+  searchJobCategory(category){
+    var that = this;
+   axios.post('/jobCategory', {category: category})
+        .then(function(response){
+          const posts = response.data;
+            that.setState({items: posts});
 
-    var that =this;
-     axios.post('/someJobs',{query:query})
+        })
+          .catch(function (error) {
+            console.log(error);
+        });
+  }
+
+  searchJobTitle(query) {
+    var that = this;
+     axios.post('/someJobs', {query:query})
           .then(function (response) {
             const posts = response.data;
-            that.setState({items:posts});
+            that.setState({items: posts});
 
         })
           .catch(function (error) {
@@ -31,7 +43,6 @@ class Home extends React.Component {
     axios.get('/jobs')
     .then(response => {
     const posts = response.data;
-    // console.log(response);
     this.setState({items:posts});
     
   })
@@ -56,7 +67,7 @@ render() {
     <div>
     <br/>
     <div>
-    <Search searchJobTitle={this.searchJobTitle.bind(this)}/>
+    <Search searchJobTitle={this.searchJobTitle.bind(this)} searchJobCategory={this.searchJobCategory.bind(this)} />
     </div>
     <div>
     {arr}
