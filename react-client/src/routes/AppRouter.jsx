@@ -7,6 +7,7 @@ import NotFoundPage from '../components/NotFoundPage.jsx';
 import Login from '../components/Login.jsx';
 import Home from '../components/Home.jsx';
 import Profile from '../components/profile.jsx';
+
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
