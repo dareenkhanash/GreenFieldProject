@@ -13,11 +13,10 @@ class Home extends React.Component {
 
   searchJobCategory(category){
     var that = this;
-   axios.post('/jobCategory', {category: category})
+   axios.post('/jobCategory', {"category": category})
         .then(function(response){
           const posts = response.data;
             that.setState({items: posts});
-
         })
           .catch(function (error) {
             console.log(error);
@@ -53,15 +52,9 @@ class Home extends React.Component {
 
 render() {
   var arr = [];
-  if ( this.state.items.length === 0) {
-    return (
-      <h1> still loading </h1>
-      )
-  } else {
     this.state.items.forEach(function(item) {
       arr.push(<HomeDisplay item={item} />)
     })
-  }
   return (
   
     <div>

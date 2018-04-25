@@ -39,11 +39,9 @@ li {
     background-color: lightblue;
 }
 
-.navbar {
-}
 
 #HNA {
-    background: Black;
+    background: linear-gradient(to right, #000000, #434343);
 }
 
 #Na {
@@ -60,7 +58,7 @@ li {
 }
 
 li a:hover:not(.is-active) {
-    background-color: CRIMSON;
+    background-color: gray;
 }
 
 .is-active {

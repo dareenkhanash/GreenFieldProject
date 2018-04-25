@@ -67,7 +67,7 @@ var regexValue='\.*'+title+'\.';
 };
 
 var jobsByCategory = function(category, callback){
-  Jobs.find({category: category}, function(err, data){
+  Jobs.find(category, function(err, data){
       if(err){
       callback(err, null)
     } else {
