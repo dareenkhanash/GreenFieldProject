@@ -9,8 +9,8 @@ class Search extends React.Component {
       value: '',
       val: ''
     };
-    
-    this.handleCatagoryChange  = this.handleCatagoryChange.bind(this);
+
+    this.handleCategoryChange  = this.handleCategoryChange.bind(this);
     this.handleInputChange  = this.handleInputChange.bind(this);
   }
 
@@ -21,19 +21,19 @@ class Search extends React.Component {
     });
   }
 
-  handleCatagoryChange(e){
-    console.log("high")
+  handleCategoryChange(e){
+    this.props.searchJobCategory(e.target.value)
     this.setState({
-      Driver: e.target.value
-    })
+      val: e.target.value
+    });
   }
 
   render() {
     return (
       <div className="search-bar form-inline">  
       <div className="form-group">
-        <select id="catB" className="form-control selectpicker btn btn-default" onChange={this.handleCatagoryChange}>
-          <option value="select">Select Catagory</option>
+        <select onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-default" id="catB">
+          <option value="Select">Select Category</option>
           <option value="Driver">Driver</option>
           <option value="HomeMaintenance">Home Maintenance</option>
           <option value="ComputerMaintenance">Computer Maintenance</option>
