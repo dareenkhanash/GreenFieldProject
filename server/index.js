@@ -47,15 +47,25 @@ app.get('/jobs', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(jobs);
+			
 			res.send(jobs);
 		}
 	});	
 });
-app.post('/', function(req, res){
-	res.send("hi");
+app.get('/userJobs', function(req, res){
+
+	Jobs.jobByUserName({"user":req.session.userName}, function(err, job){
+		if(err){
+			console.log(err);
+		} else {
+			res.send(job);
+		}
+	});
 });
-app.get('/:userName', function(req, res){
+app.post('/', function(req, res){
+	
+});
+app.get('/userInfo', function(req, res){
 	if(req.session.userName){
 		res.send(req.session.userName)
 	}
@@ -71,25 +81,6 @@ app.post("/signup",function(req, res){
 	});
 });
 
-//login page 
-// app.post('/login', function(req, res){
-// 	var userName = req.userName
-// 	var password = req.password
-// 	Users.getUser(userName, password,  function (err, userName){
-// 		//this function will check the username and password
-// 		// if the username is not found 
-// 		if (err){
-// 			return res.send(err);
-// 		} if (!userName){
-// 			res.redirect('/login');
-// 		} else {
-// 			// need to create sessions here
-// 			// if it was there it will take him to the main page
-// 			res.session.user = userName
-// 			//res.redirect('/Dashboard');
-// 		}
-// 	});
-// });
 
 // needs fixing
 app.post('/Dashboard', function(req, res){
@@ -113,8 +104,8 @@ app.post('/login', function (req, res) {
 		} else {
 			req.session.userName = user.userName;
 			// req.session.password = user.password;
-			// res.locals.login = user;
-			// res.locals.session = req.session;
+			res.locals.login = user;
+			res.locals.session = req.session;
 			res.redirect('/');
 		}
 	});
@@ -149,7 +140,7 @@ app.post('/job', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(jobs);
+			
 			res.send(jobs);
 		}
 	})
@@ -166,15 +157,6 @@ app.post('/someJobs', function (req, res) {
 	});
 });
 
-app.get('/:jobTitle', function (req, res) {
-	Jobs.jobByTitle(req.params.jobTitle, function(err, job){
-		if(err){
-			console.log(err);
-		} else {
-			res.send(job);
-		}
-	});
-});
 
 
 app.post('/jobCategory', function (req, res) {
