@@ -95,9 +95,10 @@ li a:hover:not(.is-active) {
     height: 40px;
     width: 80 px;
     margin: 0px 3px;
-    font-size: 20px;
+    font-size: 14px;
 }
-.jobsDiv{
+
+.jobsDiv {
     border-radius: 10px; 
     background-color:#FFFDF0;
     width:50%;
@@ -110,4 +111,8 @@ li a:hover:not(.is-active) {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+
+#loginform {
+  text-align: center;
+}
 
