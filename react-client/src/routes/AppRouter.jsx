@@ -6,6 +6,7 @@ import NavBar from '../components/Header.jsx';
 import NotFoundPage from '../components/NotFoundPage.jsx';
 import Login from '../components/Login.jsx';
 import Home from '../components/Home.jsx';
+
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
