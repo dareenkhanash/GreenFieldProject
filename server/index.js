@@ -160,7 +160,7 @@ app.post('/someJobs', function (req, res) {
 
 
 app.post('/jobCategory', function (req, res) {
-	Jobs.jobsByCategory(req.body.category, function(err, job){
+	Jobs.jobsByCategory({"category":req.body.category}, function(err, job){
 		if(err){
 			console.log(err);
 		} else {

@@ -41,9 +41,9 @@ class JobsForm extends React.Component {
   			.catch(function (error) {
     		console.log(error);
   			});
+
   			
      //this.setState({this.baseState.states: null})
-  
 
 		};
 
@@ -59,6 +59,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
+
 			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onChange} value={this.state.states.user}/>
 			</label></Col>
 			<Col md={2}>
@@ -66,7 +67,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange = {this.onChange} />
+			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange={this.onChange} />
 			</label></Col>
 			<Col md={1}>
 			</Col>
@@ -81,14 +82,14 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange = {this.onChange} />
+			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange={this.onChange} />
 			</label></Col>
 			<Col md={2}>
 			<span>Category</span>
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange = {this.onChange} />
+			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange={this.onChange} />
 			</label> </Col>
 			<Col md={1}>
 			</Col> 
@@ -102,18 +103,19 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange = {this.onChange} />
+			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange={this.onChange} />
 			</label> </Col>
 			<Col md={2}>
 			<span>To</span>
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange = {this.onChange} />
+			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange={this.onChange} />
 			</label></Col>
 			<Col md={1}>
 			</Col>
 			</Row><br /><br />
+
 			    <Button onClick={this.submitForm} type="submit" bsSize="large">
 				      Submit
 			    </Button>	
