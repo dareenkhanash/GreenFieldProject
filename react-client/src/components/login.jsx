@@ -38,6 +38,7 @@ class Login extends React.Component {
 		render() {
     return (
       <div className="Login container"><br />
+      <label>
         <form onSubmit={this.handleSubmit}>
           <FormGroup  bsSize="large">
             <ControlLabel>Username</ControlLabel>
@@ -61,6 +62,7 @@ class Login extends React.Component {
             Login
           </Button>
         </form>
+        </label>
       </div>
     );
   }

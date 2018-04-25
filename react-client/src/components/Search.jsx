@@ -6,8 +6,12 @@ class Search extends React.Component {
     super(props);
 
     this.state = {
-      value: ''
+      value: '',
+      val: ''
     };
+    
+    this.handleCatagoryChange  = this.handleCatagoryChange.bind(this);
+    this.handleInputChange  = this.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
@@ -17,16 +21,22 @@ class Search extends React.Component {
     });
   }
 
+  handleCatagoryChange(e){
+    console.log("high")
+    this.setState({
+      Driver: e.target.value
+    })
+  }
+
   render() {
     return (
       <div className="search-bar form-inline">  
-
       <div className="form-group">
-        <select className="form-control selectpicker btn btn-default" id="catB">
+        <select id="catB" className="form-control selectpicker btn btn-default" onChange={this.handleCatagoryChange}>
           <option value="select">Select Catagory</option>
           <option value="Driver">Driver</option>
-          <option value="Home Maintenance">Home Maintenance</option>
-          <option value="Computer Maintenance">Computer Maintenance</option>
+          <option value="HomeMaintenance">Home Maintenance</option>
+          <option value="ComputerMaintenance">Computer Maintenance</option>
           <option value="Babysitting">Babysitting</option>
           <option value="Tutoring">Tutoring</option>
           <option value="Others">Others</option>
@@ -37,7 +47,7 @@ class Search extends React.Component {
           className="Sform-control"
           type="text"
           value={this.state.value}
-          onChange={this.handleInputChange.bind(this)}
+          onChange={this.handleInputChange}
           placeholder="Job Title"
         />
          <Button id='search-button' className="btn btn-default hidden-sm-down">
