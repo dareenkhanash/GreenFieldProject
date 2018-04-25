@@ -18,6 +18,8 @@ var jobsSchema = mongoose.Schema({
   },
   from: String,
   to: String,
+  dateTo:Date,
+  dateFrom:Date,
   created_at: 
   {
     type:Date,
@@ -64,7 +66,16 @@ var regexValue='\.*'+title+'\.';
     callback(null,data)}
   });
 };
+var jobByUserName=function(userName,callback){
+  
+  Jobs.find(userName).exec(function(err, data){
+     if(err){
+      callback(err,null)
+    } else {
 
+    callback(null,data)}
+  });
+};
 var jobsByCatagory = function(category, callback){
   Jobs.findOne({category: category}, function(err, data){
       if(err){
@@ -107,6 +118,7 @@ module.exports.createJob = createJob;
 module.exports.allJobs = allJobs;
 module.exports.jobByTitle = jobByTitle;
 module.exports.jobsByCatagory = jobsByCatagory;
+module.exports.jobByUserName = jobByUserName;
 module.exports.jobsByStartTime = jobsByStartTime;
 module.exports.jobsByEndTime = jobsByEndTime;
 module.exports.updateJobs = updateJobs;

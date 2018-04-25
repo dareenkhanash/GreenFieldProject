@@ -12,16 +12,7 @@ class Home extends React.Component {
   }
 
   searchJobTitle(query) {
-    // console.log( this.state.items)
 
-    // let jobTitles = this.state.items.filter((title) => {
-    //   return title.jobTitle.includes(query) 
-    // });
-    // //console.log(jobTitles)
-    
-    //   this.setState({items: jobTitles})
- 
-    // console.log(this.state.items)
     var that =this;
      axios.post('/someJobs',{query:query})
           .then(function (response) {
