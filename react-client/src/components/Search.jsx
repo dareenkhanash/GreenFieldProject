@@ -7,9 +7,9 @@ class Search extends React.Component {
 
     this.state = {
       value: '',
-      Driver: ''
-
+      val: ''
     };
+    
     this.handleCatagoryChange  = this.handleCatagoryChange.bind(this);
     this.handleInputChange  = this.handleInputChange.bind(this);
   }
@@ -32,9 +32,9 @@ class Search extends React.Component {
     return (
       <div className="search-bar form-inline">  
       <div className="form-group">
-        <select className="form-control selectpicker btn btn-default" id="catB">
+        <select id="catB" className="form-control selectpicker btn btn-default" onChange={this.handleCatagoryChange}>
           <option value="select">Select Catagory</option>
-          <option onChange={this.handleCatagoryChange} value="Driver">Driver</option>
+          <option value="Driver">Driver</option>
           <option value="HomeMaintenance">Home Maintenance</option>
           <option value="ComputerMaintenance">Computer Maintenance</option>
           <option value="Babysitting">Babysitting</option>
