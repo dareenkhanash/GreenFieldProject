@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, ControlLabel, DropdownButton, MenuItem } from "react-bootstrap";
 
 class Search extends React.Component {
   constructor(props) {
@@ -20,6 +20,12 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-bar form-inline">
+        <DropdownButton title="Catagory" id="catB">
+      <MenuItem eventKey="1">Driver</MenuItem>
+      <MenuItem eventKey="2">Maintenance</MenuItem>
+      <MenuItem eventKey="3">Job3</MenuItem>
+      <MenuItem eventKey="4">Job4</MenuItem>
+      </DropdownButton>
         <FormControl
           className="Sform-control"
           type="text"
