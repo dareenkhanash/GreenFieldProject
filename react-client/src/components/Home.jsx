@@ -11,22 +11,25 @@ class Home extends React.Component {
     }
   }
 
-  searchJobTitle(query) {
-    // console.log( this.state.items)
+  searchJobCategory(category){
+    var that = this;
+   axios.post('/jobCategory', {category: category})
+        .then(function(response){
+          const posts = response.data;
+            that.setState({items: posts});
 
-    // let jobTitles = this.state.items.filter((title) => {
-    //   return title.jobTitle.includes(query) 
-    // });
-    // //console.log(jobTitles)
-    
-    //   this.setState({items: jobTitles})
- 
-    // console.log(this.state.items)
-    var that =this;
-     axios.post('/someJobs',{query:query})
+        })
+          .catch(function (error) {
+            console.log(error);
+        });
+  }
+
+  searchJobTitle(query) {
+    var that = this;
+     axios.post('/someJobs', {query:query})
           .then(function (response) {
             const posts = response.data;
-            that.setState({items:posts});
+            that.setState({items: posts});
 
         })
           .catch(function (error) {
@@ -40,7 +43,6 @@ class Home extends React.Component {
     axios.get('/jobs')
     .then(response => {
     const posts = response.data;
-    // console.log(response);
     this.setState({items:posts});
     
   })
@@ -65,7 +67,7 @@ render() {
     <div>
     <br/>
     <div>
-    <Search searchJobTitle={this.searchJobTitle.bind(this)}/>
+    <Search searchJobTitle={this.searchJobTitle.bind(this)} searchJobCategory={this.searchJobCategory.bind(this)} />
     </div>
     <div>
     {arr}
