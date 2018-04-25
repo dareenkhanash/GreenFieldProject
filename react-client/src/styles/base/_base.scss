@@ -69,26 +69,31 @@ li a:hover:not(.is-active) {
 }
 
 #search-button {
-    background-color: #DC143C;
+    background-color: STEELBLUE;
     border: none;
     color: white;
-    padding: 12px 22px;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 0px 2px;
     cursor: pointer;
     border-radius: 20%
+
 }
 
 .Sform-control {
     height: 40px;
     width: 175px;
-    font-size: 20px;
+    font-size: 17px;
+    margin: 0px 3px;
+
 }
 
 #catB {
     height: 40px;
-    width: 100 px;
+    width: 80 px;
+    margin: 0px 3px;
+    font-size: 14px;
 }
