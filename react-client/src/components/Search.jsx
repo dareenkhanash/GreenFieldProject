@@ -39,7 +39,6 @@ class Search extends React.Component {
           <option value="Computer Maintenance">Computer Maintenance</option>
           <option value="Babysitting">Babysitting</option>
           <option value="Tutoring">Tutoring</option>
-          <option value="Others">Others</option>
         </select>
         </div>
 
@@ -50,9 +49,7 @@ class Search extends React.Component {
           onChange={this.handleInputChange}
           placeholder="Job Title"
         />
-         <Button id='search-button' className="btn btn-default hidden-sm-down">
-          <span className="glyphicon glyphicon-search"></span>
-         </Button><br /><br />
+        <br /><br />
       </div>
     );
   }

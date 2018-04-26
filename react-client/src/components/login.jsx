@@ -43,7 +43,7 @@ class Login extends React.Component {
             <h3 className="form-signin-heading">
                 <img id="loginimg" src="https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png"  alt="User" />
                 <br /><br />
-                <b id='b'>User Name</b>
+                <b id='b'>Login</b>
             </h3>
 
             <FormControl id='loguser' type="text" className="form-control" name="userName" onChange={this.onChange} placeholder="Username" required autoFocus /><br />
