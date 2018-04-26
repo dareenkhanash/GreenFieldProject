@@ -116,10 +116,9 @@ class JobsForm extends React.Component {
 			</Col>
 			</Row><br /><br />
 
-			    <Button onClick={this.submitForm} type="submit" bsSize="large">
+			    <Button type="submit" bsSize="large">
 				      Submit
 			    </Button>	
-
 			</form>
 			</div>
 			)
