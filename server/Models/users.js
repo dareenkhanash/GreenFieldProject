@@ -67,6 +67,19 @@ var getUser = function(userName, password, callback){
       }
   });
 };
+
+var getUserInfo= function(userName, callback){
+  ///query for checking the usename
+  var query = Users.where({ userName: userName });
+  query.findOne(function(err, userdata){
+    if(err){
+      callback(err,null)
+    } else {
+
+        callback(null, userdata);
+      }
+  });
+};
 var updateUsers = function(userName, updatedData, callback){
   Users.findOneAndUpdate({userName: userName}, {$set: updatedData}, callback)
 };
@@ -80,4 +93,6 @@ module.exports.createUsers = createUsers;
 module.exports.updateUsers = updateUsers;
 module.exports.deleteUser = deleteUser;
 module.exports.getUser = getUser;
+module.exports.getUserInfo = getUserInfo;
+
 
