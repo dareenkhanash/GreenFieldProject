@@ -43,7 +43,8 @@ var allJobs = function (callback){
     if(err){
       callback(err, null)
     } else {
-    callback(null, data)}
+    callback(null, data)
+  }
   });
 };
 
@@ -56,9 +57,9 @@ var jobByTitle = function (jobTitle, callback){
   }
   });
 };
-var findSome=function(title, callback){
+var findSome = function(title, callback){
 
-var regexValue='\.*'+title+'\.';
+var regexValue = '\.*'+title+'\.';
   Jobs.find({"jobTitle":new RegExp(regexValue, 'i')}, function(err, data){
      if(err){
       callback(err, null)
@@ -67,14 +68,14 @@ var regexValue='\.*'+title+'\.';
   }
   });
 };
-var jobByUserName=function(userName,callback){
+var jobByUserName = function(userName, callback){
   
   Jobs.find(userName).exec(function(err, data){
      if(err){
-      callback(err,null)
+      callback(err, null)
     } else {
-
-    callback(null,data)}
+    callback(null, data)
+  }
   });
 };
 
@@ -109,12 +110,12 @@ var jobsByEndTime = function(to, callback){
 };
 
 var updateJobs = function(jobTitle, updatedData, callback){
-  Jobs.findOneAndUpdate({jobTitle: jobTitle},  { $set: updatedData}, callback)
+  Jobs.findOneAndUpdate({jobTitle: jobTitle}, {$set: updatedData}, callback)
 };
 
 var deleteJob = function(jobTitle, callback){
   Jobs.deleteOne({jobTitle: jobTitle}, callback)
-}
+};
 
 
 // Exporting the Model and the functions
