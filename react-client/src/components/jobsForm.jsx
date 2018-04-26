@@ -16,7 +16,7 @@ class JobsForm extends React.Component {
 
 			
 		}
-		this.baseState = this.state
+		this.baseState = this.state;
 		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -26,10 +26,8 @@ class JobsForm extends React.Component {
       var name = e.target.name;
       var value = e.target.value;
       states[name] = value;
-      this.setState({states});
-      
+      this.setState({states});  
 	};
-	
 	
 
 	handleSubmit(event) {
@@ -43,8 +41,6 @@ class JobsForm extends React.Component {
   			});
 
   			
-     //this.setState({this.baseState.states: null})
-
 		};
 
 	render() {
@@ -89,7 +85,17 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "category" placeholder = "Job Category" autoFocus onChange={this.onChange} />
+			<div className="form-group">
+        <select name = "category" className="form-control selectpicker btn btn-default" id="catB" onChange={this.onChange}>
+          <option value="Select">Select Category</option>
+          <option value="Driver">Driver</option>
+          <option value="Home Maintenance">Home Maintenance</option>
+          <option value="Computer Maintenance">Computer Maintenance</option>
+          <option value="Babysitting">Babysitting</option>
+          <option value="Tutoring">Tutoring</option>
+          <option value="Others">Others</option>
+        </select>
+        </div>
 			</label> </Col>
 			<Col md={1}>
 			</Col> 
