@@ -5,7 +5,6 @@ import $ from 'jquery';
 class Posts extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   componentDidMount() {

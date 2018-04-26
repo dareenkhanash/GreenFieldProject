@@ -18,7 +18,9 @@ const AppRouter = () => (
 			<Route  path = "/jobsForm" component = {JobsForm} />
 			<Route  path = "/profile" component = {Profile} />			
 			<Route  path = "/login"	component = {Login} />	
+			<Route  path = "/logout"	component = {Login} />	
 			<Route component = {NotFoundPage} />
+
 
 
 			</Switch>

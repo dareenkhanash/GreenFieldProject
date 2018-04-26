@@ -43,49 +43,50 @@ class SignUpForm extends React.Component {
        
  render() {
     return (
-    <div className="container"><br />
+    <div className="container wrapper well"><br />
+    <span id="req" className="wrapper">*required</span>
       <form onSubmit = {this.handleSubmit}>
-      <label className="well">Name
-        <FormControl type="text" name="name" placeholder="Name" autoFocus
+      <label >*Name
+        <FormControl type="text" name="name" placeholder="Name" autoFocus required
         onChange = {this.onChange}
         />
       </label><br />
-      <label className="well">User Name
-        <FormControl type="text" name="userName" placeholder="User Name" 
+      <label >*User Name
+        <FormControl type="text" name="userName" placeholder="User Name" required
         onChange = {this.onChange}
         />
       </label><br />
-      <label className="well">Password
-        <FormControl type="password" name="password" placeholder="Password" autoFocus
+      <label >*Password
+        <FormControl type="password" name="password" placeholder="Password" autoFocus required
         onChange = {this.onChange}
         />
       </label><br />
-       <label className="well">Email:
-        <FormControl type="email" name="email" placeholder="Email" 
+       <label >*Email:
+        <FormControl type="email" name="email" placeholder="Email" required
           onChange={this.onChange} />
         </label><br />
         
-        <label className="well">Gender
-        <FormControl type="text" name="gender" placeholder="Gender" 
+        <label >*Gender
+        <FormControl type="text" name="gender" placeholder="Gender" required
           onChange={this.onChange} />
         </label><br />
         
-        <label className="well">Phone Number 
-        <FormControl type="number" name="phoneNumber" placeholder="Phone Number" 
+        <label >*Phone Number 
+        <FormControl type="number" name="phoneNumber" placeholder="Phone Number" required
           onChange={this.onChange} />
         </label><br />
         
-        <label className="well">Address
-        <FormControl type="text" name="address" placeholder="Address" 
+        <label >Address
+        <FormControl type="text" name="address" placeholder="Address"
           onChange={this.onChange} />
         </label><br />
         
-        <label className="well">Age
-         <FormControl type="number" name="age" placeholder="Age" 
+        <label >*Age
+         <FormControl type="number" name="age" placeholder="Age" required
           onChange={this.onChange} />
         </label><br />
         
-        <label className="well">Nationality
+        <label >Nationality
          <FormControl type="text" name="nationality" placeholder="Nationality" 
           onChange={this.onChange} />
         </label><br /><br />

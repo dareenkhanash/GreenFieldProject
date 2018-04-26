@@ -45,7 +45,8 @@ class JobsForm extends React.Component {
 
 	render() {
 		return (
-			<div className="container"><br />
+			<center>
+			<div id="jobform" className="container wrapper well"><br /><br /><br />
 			<form onSubmit={this.handleSubmit}>
 			<Row>
 			<Col md={1}>
@@ -56,19 +57,18 @@ class JobsForm extends React.Component {
 			<Col md={3}>
 			<label >
 
-			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus onChange = {this.onChange} value={this.state.states.user}/>
+			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus required onChange = {this.onChange} value={this.state.states.user}/>
 			</label></Col>
 			<Col md={2}>
 			<span>Job Title</span>
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus onChange={this.onChange} />
+			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			<Col md={1}>
 			</Col>
 			</Row> <br />
-
 
 			<Row>
 			<Col md={1}>
@@ -78,7 +78,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "jobDescription" placeholder = "Job Description" autoFocus onChange={this.onChange} />
+			<FormControl type = "text" name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			<Col md={2}>
 			<span>Category</span>
@@ -93,7 +93,6 @@ class JobsForm extends React.Component {
           <option value="Computer Maintenance">Computer Maintenance</option>
           <option value="Babysitting">Babysitting</option>
           <option value="Tutoring">Tutoring</option>
-          <option value="Others">Others</option>
         </select>
         </div>
 			</label> </Col>
@@ -109,25 +108,26 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "time" name = "from" placeholder = "From" autoFocus onChange={this.onChange} />
+			<FormControl type = "time" name = "from" placeholder = "From" autoFocus required onChange={this.onChange} />
 			</label> </Col>
 			<Col md={2}>
 			<span>To</span>
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "time" name = "to" placeholder = "To" autoFocus onChange={this.onChange} />
+			<FormControl type = "time" name = "to" placeholder = "To" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			<Col md={1}>
 			</Col>
 			</Row><br /><br />
 
-			    <Button type="submit" bsSize="large">
+			    <Button id="jobb" className="btn btn-primary" type="submit" bsSize="large" >
 				      Submit
 			    </Button>	
 			</form>
 			</div>
-			)
+			</center>
+		)
 	}
 }
 
