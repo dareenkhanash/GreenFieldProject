@@ -1,30 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import HomeDisplay from './HomeDisplay.jsx';
-import Search from './Search.jsx'
-
+import Search from './Search.jsx';
+import UserInfo from './UserInfo.jsx';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      jobs: []
+      jobs: [],
+      user:[]
     }
   }
 
-  // searchJobTitle(query) {
-
-  //   var that =this;
-  //    axios.post('/someJobs',{query:query})
-  //         .then(function (response) {
-  //           const posts = response.data;
-  //           that.setState({items:posts});
-
-  //       })
-  //         .catch(function (error) {
-  //           console.log(error);
-  //       });
-  
-  // }
 
 //make new get requests for each filter
   componentDidMount() {
@@ -33,13 +20,25 @@ class Profile extends React.Component {
     const posts = response.data;
     console.log("response");
     this.setState({jobs:posts});
-     console.log(posts);
+    
     
   }).catch(function (error) {
     console.log(error);
   });
+  this.getUserInfo();
+}
 
-
+getUserInfo(){
+    axios.get('/userInfo')
+    .then(response => {
+    const posts = response.data;
+    console.log(posts);
+    this.setState({user:posts});
+    
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
 
 render() {
@@ -58,7 +57,7 @@ render() {
     <div>
     <br/>
     <div>
-    
+    <UserInfo user={this.state.user}/>
     </div>
     <div>
     {arr}

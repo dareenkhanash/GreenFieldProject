@@ -66,9 +66,26 @@ app.post('/', function(req, res){
 	
 });
 app.get('/userInfo', function(req, res){
-	if(req.session.userName){
-		res.send(req.session.userName)
-	}
+		Users.getUserInfo(req.session.userName, function(err, user){
+		if(err){
+			console.log(err);
+		} else {
+
+			res.send(user);
+		}
+	});
+});
+app.put('/updateUser', function (req, res) {
+	var query = req.session.userName;
+	var updatedData = req.body;
+	console.log(updatedData)
+	Users.updateUsers(query, updatedData, function(err, users){
+		if(err){
+			console.log(err);
+		} else {
+			res.send(users);
+		}
+	});
 });
 app.post("/signup",function(req, res){
 	var user = req.body
@@ -111,17 +128,7 @@ app.post('/login', function (req, res) {
 	});
 });
 
-app.put('/:userName', function (req, res) {
-	var query = req.params.userName;
-	var updatedData = req.body;
-	Users.updateUsers(query, updatedData, function(err, users){
-		if(err){
-			console.log(err);
-		} else {
-			res.send(users);
-		}
-	});
-});
+
 
 app.delete('/:userName', function (req, res) {
 	var query = req.params.userName;
