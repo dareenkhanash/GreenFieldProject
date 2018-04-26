@@ -55,7 +55,8 @@ render() {
     
     
     </div>
-    </div>)
+    </div>
+    )
   }
 }
 export default HomeDisplay;

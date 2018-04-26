@@ -52,7 +52,7 @@ class Search extends React.Component {
         />
          <Button id='search-button' className="btn btn-default hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>
-         </Button>
+         </Button><br /><br />
       </div>
     );
   }
