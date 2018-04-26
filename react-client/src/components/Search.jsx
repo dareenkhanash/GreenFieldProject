@@ -35,8 +35,8 @@ class Search extends React.Component {
         <select onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-default" id="catB">
           <option value="Select">Select Category</option>
           <option value="Driver">Driver</option>
-          <option value="HomeMaintenance">Home Maintenance</option>
-          <option value="ComputerMaintenance">Computer Maintenance</option>
+          <option value="Home Maintenance">Home Maintenance</option>
+          <option value="Computer Maintenance">Computer Maintenance</option>
           <option value="Babysitting">Babysitting</option>
           <option value="Tutoring">Tutoring</option>
           <option value="Others">Others</option>
