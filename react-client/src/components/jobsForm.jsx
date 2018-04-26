@@ -31,7 +31,7 @@ class JobsForm extends React.Component {
 	
 
 	handleSubmit(event) {
-		//event.preventDefault();
+		event.preventDefault();
 		axios.post('/job', this.state.states)
   			.then(function (response) {
     		console.log(response);

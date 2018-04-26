@@ -39,13 +39,31 @@ var createJob = function(data, callback){
 // it's gonna retrive all the jobs n the schema 
 // idk though
 var allJobs = function (callback){
-  Jobs.find({}).exec(function(err, data){
-    if(err){
-      callback(err, null)
-    } else {
-    callback(null, data)
+  // Jobs.find({}).exec(function(err, data){
+  //   if(err){
+  //     callback(err, null)
+  //   } else {
+  //   callback(null, data)
+  // }
+  // });
+   Jobs.aggregate([
+   {
+     $lookup:
+       {
+         from: "users",
+         localField: "user",
+         foreignField: "userName",
+         as: "userInfo"
+       }
   }
-  });
+], function (err, data) {
+        if (err) {
+          console.log(err);
+            callback(err, null);
+        }
+        console.log(data);
+        callback(null, data)
+    });
 };
 
 var jobByTitle = function (jobTitle, callback){
@@ -57,6 +75,17 @@ var jobByTitle = function (jobTitle, callback){
   }
   });
 };
+
+var getUserJob = function (jobTitle,user, callback){
+  Jobs.findOne({"jobTitle": jobTitle,"user":user}, function(err, data){
+    if(err){
+      callback(err, null)
+    } else {
+    callback(null, data)
+  }
+  });
+};
+
 var findSome = function(title, callback){
 
 var regexValue = '\.*'+title+'\.';
@@ -109,6 +138,9 @@ var jobsByEndTime = function(to, callback){
   });
 };
 
+var updateUserJob = function(jobTitle,user, updatedData, callback){
+  Jobs.findOneAndUpdate({jobTitle: jobTitle,user:user}, {$set: updatedData}, callback)
+};
 var updateJobs = function(jobTitle, updatedData, callback){
   Jobs.findOneAndUpdate({jobTitle: jobTitle}, {$set: updatedData}, callback)
 };
@@ -130,3 +162,5 @@ module.exports.jobsByEndTime = jobsByEndTime;
 module.exports.updateJobs = updateJobs;
 module.exports.deleteJob = deleteJob;
 module.exports.findSome = findSome;
+module.exports.getUserJob = getUserJob;
+module.exports.updateUserJob = updateUserJob;
