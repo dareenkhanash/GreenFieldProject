@@ -15,15 +15,19 @@ render() {
   	<div className="jobsDiv">
   		<Row>
 			
-			<Col md={6}>
+			<Col md={4}>
 			<span><b>Job Title : </b></span>
 			<span>{this.props.item.jobTitle}</span>
 			</Col>
-			<Col md={6}>
-			<span><b>Job Category : </b></span>
-			<span>{this.props.item.category}</span>
+			<Col md={4}>
+			<span><b>User Name : </b></span>
+			<span>{this.props.item.userInfo[0].userName}</span>
 			</Col>
 			
+			<Col md={4}>
+			<span><b>Job Category : </b></span>
+			<span>{this.props.item.userInfo[0].phoneNumber}</span>
+			</Col>
 			
 		</Row>
 		<Row>
@@ -46,10 +50,21 @@ render() {
 			<span>{this.props.item.to}</span>
 			</Col>
 			<Col md={4}>
+			<span><b>Job Category : </b></span>
+			<span>{this.props.item.category}</span>
+			</Col>
+			
+			
+		</Row>
+		 <Row>
+		 <Col md={8}>
+			
+			</Col>
+		 <Col md={4}>
 			<span><b>Created at : </b></span>
 			<span>{this.props.item.created_at}</span>
 			</Col>
-		</Row>
+		 </Row>
     
     
     

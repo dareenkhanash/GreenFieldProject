@@ -62,6 +62,27 @@ app.get('/userJobs', function(req, res){
 		}
 	});
 });
+
+app.post('/userJob', function(req, res){
+		Jobs.getUserJob(req.body.jobTitle,req.body.user, function(err, user){
+		if(err){
+			console.log(err);
+		} else {
+
+			res.send(user);
+		}
+	});
+});
+app.put('/userJob', function(req, res){
+		Jobs.updateUserJob(req.body.jobTitle,req.body.user,req.body, function(err, user){
+		if(err){
+			console.log(err);
+		} else {
+
+			res.send(user);
+		}
+	});
+});
 app.post('/', function(req, res){
 	
 });
@@ -109,7 +130,6 @@ app.post('/Dashboard', function(req, res){
 // destroy sessions when logout
 app.get('/logout', function (req, res) {
 	req.session.destroy();
-	res.send("logout success!");
 });
 
 

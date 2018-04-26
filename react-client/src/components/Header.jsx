@@ -1,8 +1,11 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const NavBar = () => (
-	<nav className="navbar navbar-fixed-top">
+class NavBar extends React.Component {
+
+    render(){
+        return(
+	<nav className="navbar navbar-fixed-top" >
   <div >
 		<ul id='HNA'>
 		<li id='Na'><NavLink to = "/" activeClassName = "is-active" exact = {true}>Home</NavLink></li>
@@ -15,4 +18,7 @@ const NavBar = () => (
 	 </div>
 </nav>
 	);
+ }
+}
 export default NavBar;
+ 

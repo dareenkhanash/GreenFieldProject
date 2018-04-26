@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import HomeDisplay from './HomeDisplay.jsx';
+import JobsForUser from './jobsForUser.jsx';
 import Search from './Search.jsx';
 import UserInfo from './UserInfo.jsx';
 class Profile extends React.Component {
@@ -43,15 +43,11 @@ getUserInfo(){
 
 render() {
   var arr = [];
-  if ( this.state.jobs.length === 0) {
-    return (
-      <h1> still loading </h1>
-      )
-  } else {
+  
     this.state.jobs.forEach(function(item) {
-      arr.push(<HomeDisplay item={item} />)
+      arr.push(<JobsForUser item={item} />)
     })
-  }
+  
   return (
   
     <div>

@@ -1,23 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import { Button, FormControl, Row, Col, ButtonToolbar } from 'react-bootstrap';
-class UserInfo extends React.Component {
+class UserJobs extends React.Component {
    constructor(props) {
     super(props);
     this.state = {states:{
-        name:'',
-        email: '',
-        gender: '',
-        phoneNumber: '',
-        address: '',
-        age: '',
-        nationality: ''}
-
+      user: '',
+      jobTitle: '',
+      jobDescription: '',
+      category: '',
+      from: '',
+      to: ''}
     }
- 
-    console.log(props);
+    console.log(this.props.match.params.jobTitle)
+    console.log(this.props.match.params.userName)
     this.onChange = this.onChange.bind(this);
     this.handleSubmit  = this.handleSubmit.bind(this);
+    // const posts = this.props.item;
+    //  this.setState({states:posts});
   }
     onChange(e) {
       var states = this.state.states;
@@ -28,7 +28,9 @@ class UserInfo extends React.Component {
 
     };
    componentDidMount() {
-   	  axios.get('/userInfo')
+    var that =this
+   	  axios.post('/userJob',{jobTitle:that.props.match.params.jobTitle,
+        user:that.props.match.params.userName})
     .then(response => {
     const posts = response.data;
     console.log(posts);
@@ -66,61 +68,45 @@ render() {
       <form onSubmit = {this.handleSubmit}>
       <Row>
 		<Col md={4}>
-	      <label >*Name
+	      <label >*Job Title
 	        <FormControl type="text" name="name" placeholder="Name" autoFocus required
-	        onChange = {this.onChange}  value={this.state.states.name}
+	        onChange = {this.onChange}  value={this.state.states.jobTitle}
 	        />
 	      </label>
       	</Col>
       	<Col md={4}>
-        <label >*Phone Number 
+        <label >*Job Description
           <FormControl type="number" name="phoneNumber" placeholder="Phone Number" required
-            onChange={this.onChange} value={this.state.states.phoneNumber}/>
+            onChange={this.onChange} value={this.state.states.jobDescription}/>
           </label><br />
 	    
 	    </Col>
 		<Col md={4}>
-	       <label >*Email:
+	       <label >* Category:
 	        <FormControl type="email" name="email" placeholder="Email" required
-	          onChange={this.onChange}  value={this.state.states.email} /> 
+	          onChange={this.onChange}  value={this.state.states.category} /> 
 	        </label><br />
         </Col>
      </Row>
      <Row>
       	<Col md={4}>
-	        <label >*Gender
+	        <label >*from
 	        <FormControl type="text" name="gender" placeholder="Gender" required
-	          onChange={this.onChange}  value={this.state.states.gender} />
+	          onChange={this.onChange}  value={this.state.states.from} />
 	        </label><br />
         </Col>
 		<Col md={4}>
-    <label >Nationality
+    <label >to
            <FormControl type="text" name="nationality" placeholder="Nationality" 
-            onChange={this.onChange} value={this.state.states.nationality} />
+            onChange={this.onChange} value={this.state.states.to} />
           </label><br />
         
 	    </Col>
       	<Col md={4}>   
-	        <label >Address
-	        <FormControl type="text" name="address" placeholder="Address"
-	          onChange={this.onChange} value={this.state.states.address} />
-	        </label><br />
+	         <Button type = "submit" bsStyle="success" bsSize="large">Update</Button> 
 	    </Col>
 	  </Row>
-	  <Row>
-		<Col md={4}>    
-	        <label >*Age
-	         <FormControl type="number" name="age" placeholder="Age" required
-	          onChange={this.onChange} value={this.state.states.age}/>
-	        </label><br />
-	    </Col>
-      	<Col md={4}>   
-	        <Button type = "submit" bsStyle="success" bsSize="large">Update</Button> 
-		</Col>
-		<Col md={4}>
-		
-		</Col>
-	  </Row>
+	 
 
       
 
@@ -129,4 +115,4 @@ render() {
     )
   }
 }
-export default UserInfo;
+export default UserJobs;
