@@ -30,9 +30,10 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="search-bar form-inline">  
+      <div id="catagory" className="search-bar form-inline">  
+
       <div className="form-group">
-        <select onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-default" id="catB">
+        <select id="catB" onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-info">
           <option value="Select">Select Category</option>
           <option value="Driver">Driver</option>
           <option value="Home Maintenance">Home Maintenance</option>
@@ -43,6 +44,7 @@ class Search extends React.Component {
         </div>
 
       <FormControl
+          id='catI'
           className="Sform-control"
           type="text"
           value={this.state.value}

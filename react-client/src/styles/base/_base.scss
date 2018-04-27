@@ -89,17 +89,38 @@ li a:hover:not(.is-active) {
 
 }
 
+#catagory {
+    border-radius: 10px; 
+    width: 800px;
+    height: 70px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 #catB {
-    height: 40px;
-    width: 80 px;
-    margin: 0px 3px;
-    font-size: 14px;
+  width: 370px;
+  height: 50px;
+  margin: 10px
+}
+
+#catJ {
+  width: 175px;
+  height: 35px;
+}
+
+#catI {
+  width: 370px;
+  height: 50px;
 }
 
 .jobsDiv {
     border-radius: 10px; 
     background-color: #FFFDF0;
-    width: 50%;
+    width: 800;
     margin-bottom: 10px;
     margin-top: 5px;
     padding-top: 10px;
@@ -181,7 +202,7 @@ li a:hover:not(.is-active) {
 }
 
 #req {
-   font-size: 12px; 
+   font-size: 15px; 
 }
 
 #signUpPage {
@@ -210,4 +231,8 @@ li a:hover:not(.is-active) {
 
 #signlable {
   text-align: left;
+}
+
+#description {
+ text-align: left; 
 }
