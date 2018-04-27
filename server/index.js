@@ -9,6 +9,9 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var expressValidtor = require('express-validator');
 var mongoStore = require('connect-mongo')(session);
+
+
+//it generates a unique id for the session
 var generateSecret = function (){
 	var j, x;
 	var random = ["f", "b", "C", "v", "I", "f", "N", "E", "j", "w", "i", "H", "N", "H", "z", "7", "n", "n", "a", "3", "V", "I", "Q", "J", "Q"]
@@ -20,11 +23,13 @@ var generateSecret = function (){
 	}
 	return random.join('');
 };
+
 var app = express();
 redirect(app);
 
-//using react
+//connects the server with client side
 app.use(express.static(__dirname + '/../react-client/dist'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -42,6 +47,7 @@ app.use(session({
 // 	next();
 // })
 
+//it renders all the jobs
 app.get('/jobs', function(req, res){
 	Jobs.allJobs(function(err, jobs){
 		if(err){
@@ -52,9 +58,10 @@ app.get('/jobs', function(req, res){
 		}
 	});	
 });
-app.get('/userJobs', function(req, res){
 
-	Jobs.jobByUserName({"user":req.session.userName}, function(err, job){
+//it renders the jobs for each individual user
+app.get('/userJobs', function(req, res){
+	Jobs.jobByUserName({"user": req.session.userName}, function(err, job){
 		if(err){
 			console.log(err);
 		} else {
@@ -63,6 +70,7 @@ app.get('/userJobs', function(req, res){
 	});
 });
 
+//??
 app.post('/userJob', function(req, res){
 		Jobs.getUserJob(req.body.jobTitle,req.body.user, function(err, user){
 		if(err){
@@ -73,9 +81,10 @@ app.post('/userJob', function(req, res){
 		}
 	});
 });
+
+//it updates the user job
 app.put('/updateUserJob', function(req, res){
-	
-		Jobs.updateUserJob(req.body.jobTitle,req.body.states.user,req.body.states, function(err, user){
+	Jobs.updateUserJob(req.body.jobTitle,req.body.states.user,req.body.states, function(err, user){
 		if(err){
 			console.log(err);
 		} else {
@@ -84,9 +93,8 @@ app.put('/updateUserJob', function(req, res){
 		}
 	});
 });
-app.post('/', function(req, res){
-	
-});
+
+//??
 app.get('/userInfo', function(req, res){
 		Users.getUserInfo(req.session.userName, function(err, user){
 		if(err){
@@ -97,6 +105,8 @@ app.get('/userInfo', function(req, res){
 		}
 	});
 });
+
+//it updates the user information
 app.put('/updateUser', function (req, res) {
 	var query = req.session.userName;
 	var updatedData = req.body;
@@ -109,6 +119,8 @@ app.put('/updateUser', function (req, res) {
 		}
 	});
 });
+
+//sends the user information to the database
 app.post("/signup",function(req, res){
 	var user = req.body
 	Users.createUsers(user, function(err, userdata){
@@ -120,28 +132,19 @@ app.post("/signup",function(req, res){
 	});
 });
 
-
-// needs fixing
-app.post('/Dashboard', function(req, res){
-	if(!req.session.user){
-		res.redirect('/login')
-	}
-});
-
-// destroy sessions when logout
+// destroys sessions when logout
 app.get('/logout', function (req, res) {
 	req.session.destroy();
+	res.redirect('/login');
 });
 
-
-
+//it checks the user information; if it already exists, it will create a session
 app.post('/login', function (req, res) {
 	Users.getUser(req.body.userName, req.body.password, function(err, user){
 		if(err){
 			console.log(err)
 		} else {
 			req.session.userName = user.userName;
-			// req.session.password = user.password;
 			res.locals.login = user;
 			res.locals.session = req.session;
 			res.redirect('/');
@@ -149,20 +152,7 @@ app.post('/login', function (req, res) {
 	});
 });
 
-
-
-app.delete('/:userName', function (req, res) {
-	var query = req.params.userName;
-	Users.deleteUser(query, function(err, users){
-		if(err){
-			console.log(err);
-		} else {
-			res.send(users);
-		}
-	});
-});
-
-// Jobs commands 
+//it creates a new job
 app.post('/job', function(req, res){
 	Jobs.createJob(req.session.userName,req.body, function(err,jobs){
 		if(err){
@@ -174,8 +164,8 @@ app.post('/job', function(req, res){
 	})
 });
 
+//it searches jobs by title
 app.post('/someJobs', function (req, res) {
-
 	Jobs.findSome(req.body.query, function(err, jobs){
 		if(err){
 			console.log(err);
@@ -185,8 +175,7 @@ app.post('/someJobs', function (req, res) {
 	});
 });
 
-
-
+//it searches jobs by category
 app.post('/jobCategory', function (req, res) {
 	Jobs.jobsByCategory({"category":req.body.category}, function(err, job){
 		if(err){
@@ -197,24 +186,7 @@ app.post('/jobCategory', function (req, res) {
 	});
 });
 
-// im not sure how to implement the time (from - to)
-
-
-
-
-app.put('/:jobTitle', function(req, res){
-	var query = req.params.jobTitle;
-	var updatedData = req.body;
-	Jobs.updateJobs(query, updatedData, function(err, jobs){
-		if(err){
-			console.log(err);
-		} else {
-			res.send(jobs);
-		}
-	});
-});
-
-
+//?
 app.delete('/:jobTitle', function(req, res){
 	Jobs.deleteJob(req.body.jobTitle, function(err, job){
 		if(err){
@@ -224,7 +196,6 @@ app.delete('/:jobTitle', function(req, res){
 		}
 	});
 });
-
 
 var port = 3000
 app.listen(port, function() {
