@@ -42,7 +42,7 @@ render() {
 			</Col>
 			<Col md={4}>
 			<span><b>Phone Number : </b></span>
-			
+			<span>{this.props.item.userInfo[0].phoneNumber}</span>
 			</Col>
 			
 		</Row><br />
