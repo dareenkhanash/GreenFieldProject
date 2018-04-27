@@ -2,43 +2,34 @@ import React from 'react';
 import { Button, FormControl, Row, Col, ButtonToolbar } from 'react-bootstrap';
 class HomeDisplay extends React.Component {
   constructor(props) {
+  	console.log(props.item.to)
     super(props);
-    
   }
 
 
  
 render() {
-  
   return (
   	<div>
-  	<div id ='postDiv'className="jobsDiv">
+  	<div id ='postDiv'className="jobsDiv container">
   		<Row>
 			
 			<Col md={4}>
-			<span><b>User Name : </b></span>
+			<span><b>Name : </b></span>
 			<span>{this.props.item.user}</span>
 			</Col>
 			<Col md={4}>
 			<span><b>Job Title : </b></span>
 			<span>{this.props.item.jobTitle}</span>
 			</Col>
-			
 			<Col md={4}>
-			<span><b>Phone Number : </b></span>
-			<span>{this.props.item.userInfo.phoneNumber}</span>
+			<span><b>Job Category : </b></span>
+			<span>{this.props.item.category}</span>
 			</Col>
 			
-		</Row><br />
-		<Row>
-			
-
-			<Col md={12}>
-			<span><b>Description : </b></span>
-			<span>{this.props.item.jobDescription}</span>
-			</Col>
 			
 		</Row><br />
+		
         <Row>
 			
             <Col md={4}>
@@ -50,10 +41,20 @@ render() {
 			<span>{this.props.item.to}</span>
 			</Col>
 			<Col md={4}>
-			<span><b>Job Category : </b></span>
-			<span>{this.props.item.category}</span>
+			<span><b>Phone Number : </b></span>
+			<span>{this.props.item.userInfo[0].phoneNumber}</span>
 			</Col>
 			
+		</Row><br />
+		<Row>
+		<Col md={1}>
+		</Col>
+			<Col id="description" md={10}>
+			<span><b>Description : </b></span>
+			<span>{this.props.item.jobDescription}</span>
+			</Col>
+			<Col md={1}>
+			</Col>
 			
 		</Row><br />
 		 <Row>

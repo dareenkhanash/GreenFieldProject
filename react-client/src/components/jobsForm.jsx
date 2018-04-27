@@ -86,7 +86,7 @@ class JobsForm extends React.Component {
 			<Col md={3}>
 			<label >
 			<div className="form-group">
-        <select name = "category" className="form-control selectpicker btn btn-default" id="catB" onChange={this.onChange}>
+        <select name = "category" className="form-control selectpicker btn btn-default" id="catJ" onChange={this.onChange}>
           <option value="Select">Select Category</option>
           <option value="Driver">Driver</option>
           <option value="Home Maintenance">Home Maintenance</option>
