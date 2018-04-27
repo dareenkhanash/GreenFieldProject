@@ -53,7 +53,6 @@ app.get('/jobs', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(jobs);
 			res.send(jobs);
 		}
 	});	

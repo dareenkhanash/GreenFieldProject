@@ -34,7 +34,7 @@ class SignUpForm extends React.Component {
          event.preventDefault();
         axios.post('/signup', this.state.states)
           .then(function (response) {
-               //window.location.href = "/login";
+              // window.location.href = "/login";
         })
           .catch(function (error) {
             console.log(error);

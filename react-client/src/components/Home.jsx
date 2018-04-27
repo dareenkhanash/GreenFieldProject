@@ -51,6 +51,7 @@ class Home extends React.Component {
 
 //make new get requests for each filter
   componentDidMount() {
+    console.log("hi");
     axios.get('/jobs')
     .then(response => {
     const posts = response.data;

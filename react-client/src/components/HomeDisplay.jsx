@@ -9,6 +9,11 @@ class HomeDisplay extends React.Component {
 
  
 render() {
+	let phonNum=0;
+	if(this.props.item.userInfo.length>0){
+		 phonNum=this.props.item.userInfo[0].phoneNumber;
+	}
+	
   return (
   	<div>
   	<div id ='postDiv'className="jobsDiv container">
@@ -42,7 +47,7 @@ render() {
 			</Col>
 			<Col md={4}>
 			<span><b>Phone Number : </b></span>
-			<span>{this.props.item.userInfo[0].phoneNumber}</span>
+			<span>{phonNum}</span>
 			</Col>
 			
 		</Row><br />
