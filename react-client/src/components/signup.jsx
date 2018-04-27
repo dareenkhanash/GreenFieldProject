@@ -44,7 +44,7 @@ class SignUpForm extends React.Component {
  render() {
     return (
       <div id="signUpPage" className="container-fluid">
-    <div className="container wrapper"><br />
+    <div className="container wrapper well"><br />
 <span id="req" className="wrapper">* required</span>
   <form onSubmit = {this.handleSubmit}>
   <Row>

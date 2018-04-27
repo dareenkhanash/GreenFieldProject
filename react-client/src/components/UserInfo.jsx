@@ -85,7 +85,7 @@ render() {
 	          onChange={this.onChange}  value={this.state.states.email} /> 
 	        </label><br />
         </Col>
-     </Row>
+     </Row><br />
      <Row>
       	<Col md={4}>
 	        <label >*Gender
@@ -106,7 +106,7 @@ render() {
 	          onChange={this.onChange} value={this.state.states.address} />
 	        </label><br />
 	    </Col>
-	  </Row>
+	  </Row><br />
 	  <Row>
 		<Col md={4}>    
 	        <label >*Age
