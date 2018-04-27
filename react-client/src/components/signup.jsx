@@ -49,21 +49,21 @@ class SignUpForm extends React.Component {
   <form onSubmit = {this.handleSubmit}>
   <Row>
   <Col md={4}>
-    <label >*Name
+    <label id='signlable'>*Name
       <FormControl type="text" name="name" placeholder="Name" autoFocus required
       onChange = {this.onChange} 
       />
     </label>
     </Col>
     <Col md={4}>
-    <label >*User Name
+    <label id='signlable'>*User Name
           <FormControl type="text" name="userName" placeholder="User Name" required
           onChange = {this.onChange}
           />
         </label><br />
   </Col>
   <Col md={4}>
-     <label >*Email:
+     <label id='signlable'>*Email:
       <FormControl type="email" name="email" placeholder="Email" required
         onChange={this.onChange} /> 
       </label><br />
@@ -72,20 +72,20 @@ class SignUpForm extends React.Component {
   <Row>
     
   <Col md={4}>
-  <label >*Password
+  <label id='signlable'>*Password
         <FormControl type="password" name="password" placeholder="Password" autoFocus required
         onChange = {this.onChange}
         />
       </label><br />
   </Col>
   <Col md={4}>   
-  <label >*Phone Number 
+  <label id='signlable'>*Phone Number 
   <FormControl type="number" name="phoneNumber" placeholder="Phone Number" required
     onChange={this.onChange}/>
   </label><br />    
   </Col>
   <Col md={4}>
-  <label >*Gender
+  <label id='signlable'>*Gender
     <FormControl type="text" name="gender" placeholder="Gender" required
       onChange={this.onChange} />
     </label><br />
@@ -93,19 +93,19 @@ class SignUpForm extends React.Component {
   </Row><br />
   <Row>
   <Col md={4}>
-    <label >*Age
+    <label id='signlable'>*Age
      <FormControl type="number" name="age" placeholder="Age" required
       onChange={this.onChange} />
     </label><br />
   </Col>  
     <Col md={4}>
-    <label >Nationality
+    <label id='signlable'>Nationality
    <FormControl type="text" name="nationality" placeholder="Nationality" 
     onChange={this.onChange} />
   </label><br />
   </Col>  
   <Col md={4}>
-    <label >Address
+    <label id='signlable'>Address
     <FormControl type="text" name="address" placeholder="Address"
       onChange={this.onChange}  />
     </label><br />
