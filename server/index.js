@@ -94,7 +94,6 @@ app.put('/updateUserJob', function(req, res){
 	});
 });
 
-//??
 app.get('/userInfo', function(req, res){
 		Users.getUserInfo(req.session.userName, function(err, user){
 		if(err){

@@ -82,14 +82,31 @@ var getUserJob = function (jobTitle,user, callback){
 
 var findSome = function(title, callback){
 
-var regexValue = '\.*'+title+'\.';
-  Jobs.find({"jobTitle":new RegExp(regexValue, 'i')}, function(err, data){
-     if(err){
-      callback(err, null)
-    } else {
-    callback(null, data)
+var regexValue = '\.*'+title+'\.*';
+
+
+ Jobs.aggregate([
+    {$match:{"jobTitle":new RegExp(regexValue, 'i')}},
+   {
+    
+     $lookup:
+       {
+         from: "users",
+         localField: "user",
+         foreignField: "userName",
+         as: "userInfo"
+       }
   }
-  });
+  
+], function (err, data) {
+        if (err) {
+          console.log(err);
+            callback(err, null);
+        }
+        console.log(data);
+        callback(null, data)
+    });
+  
 };
 var jobByUserName = function(userName, callback){
   
@@ -103,13 +120,49 @@ var jobByUserName = function(userName, callback){
 };
 
 var jobsByCategory = function(category, callback){
-  Jobs.find(category, function(err, data){
-      if(err){
-      callback(err, null)
-    } else {
-    callback(null, data)
+  if(category.category!=="All"){
+   Jobs.aggregate([
+    {$match:{"category":category.category}},
+   {
+    
+     $lookup:
+       {
+         from: "users",
+         localField: "user",
+         foreignField: "userName",
+         as: "userInfo"
+       }
   }
-  });
+  
+], function (err, data) {
+        if (err) {
+          console.log(err);
+            callback(err, null);
+        }
+        console.log(data);
+        callback(null, data)
+    });
+ }else{
+   Jobs.aggregate([
+   {
+     $lookup:
+       {
+         from: "users",
+         localField: "user",
+         foreignField: "userName",
+         as: "userInfo"
+       }
+  }
+], function (err, data) {
+        if (err) {
+          console.log(err);
+            callback(err, null);
+        }
+        console.log(data);
+        callback(null, data)
+    });
+ }
+  
 };
 
 var jobsByStartTime = function(from, callback){
