@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, FormControl, Row, Col, ButtonToolbar } from 'react-bootstrap';
 class HomeDisplay extends React.Component {
   constructor(props) {
-  	console.log(props.item.to)
     super(props);
   }
 
@@ -11,7 +10,7 @@ class HomeDisplay extends React.Component {
 render() {
   return (
   	<div>
-  	<div id ='postDiv'className="jobsDiv container">
+  	<div id ='postDiv'className="jobsDiv container"><br />
   		<Row>
 			
 			<Col md={4}>
@@ -42,7 +41,7 @@ render() {
 			</Col>
 			<Col md={4}>
 			<span><b>Phone Number : </b></span>
-			<span>{this.props.item.userInfo[0].phoneNumber}</span>
+			<span>{this.props.item.phoneNumber}</span>
 			</Col>
 			
 		</Row><br />
