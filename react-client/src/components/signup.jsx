@@ -43,8 +43,8 @@ class SignUpForm extends React.Component {
        
  render() {
     return (
-    <div className="container wrapper well"><br />
-    <span id="req" className="wrapper">*required</span>
+    <div className="container wrapper well">
+    <span id="req" className="wrapper">*required</span> 
       <form onSubmit = {this.handleSubmit}>
       <label >*Name
         <FormControl type="text" name="name" placeholder="Name" autoFocus required
