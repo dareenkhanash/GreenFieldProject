@@ -21,12 +21,12 @@ render() {
 			</Col>
 			<Col md={4}>
 			<span><b>User Name : </b></span>
-			<span>{this.props.item.userInfo[0].userName}</span>
+			<span>{this.props.item.user}</span>
 			</Col>
 			
 			<Col md={4}>
-			<span><b>Job Category : </b></span>
-			<span>{this.props.item.userInfo[0].phoneNumber}</span>
+			<span><b>Phone Number : </b></span>
+			<span>{this.props.item.userInfo.phoneNumber}</span>
 			</Col>
 			
 		</Row>
