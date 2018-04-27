@@ -113,17 +113,13 @@ render() {
 	         <FormControl type="number" name="age" placeholder="Age" required
 	          onChange={this.onChange} value={this.state.states.age}/>
 	        </label><br />
-	    </Col>
+	    </Col><br /><br /><br />
+    <Col md={4}>
+    </Col>
       	<Col md={4}>   
 	        <Button type = "submit" bsStyle="success" bsSize="large">Update</Button> 
 		</Col>
-		<Col md={4}>
-		
-		</Col>
 	  </Row>
-
-      
-
       </form>
 	</div>
     )
