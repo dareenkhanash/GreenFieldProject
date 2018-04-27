@@ -44,7 +44,7 @@ class SignUpForm extends React.Component {
  render() {
     return (
       <div id="signUpPage" className="container-fluid">
-    <div className="container wrapper well"><br />
+    <div className="container wrapper"><br />
 <span id="req" className="wrapper">* required</span>
   <form onSubmit = {this.handleSubmit}>
   <Row>
@@ -68,7 +68,7 @@ class SignUpForm extends React.Component {
         onChange={this.onChange} /> 
       </label><br />
   </Col>
-  </Row>
+  </Row><br />
   <Row>
     
   <Col md={4}>
@@ -90,7 +90,7 @@ class SignUpForm extends React.Component {
       onChange={this.onChange} />
     </label><br />
   </Col>
-  </Row>
+  </Row><br />
   <Row>
   <Col md={4}>
     <label >*Age
