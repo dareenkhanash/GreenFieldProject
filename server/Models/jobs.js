@@ -31,7 +31,8 @@ var jobsSchema = mongoose.Schema({
 /////Jobs Model
 var Jobs = mongoose.model('Jobs', jobsSchema);
 
-var createJob = function(data, callback){
+var createJob = function(userName,data, callback){
+  data["user"]=userName;
   Jobs.create(data, callback)
 };
 
@@ -39,13 +40,6 @@ var createJob = function(data, callback){
 // it's gonna retrive all the jobs n the schema 
 // idk though
 var allJobs = function (callback){
-  // Jobs.find({}).exec(function(err, data){
-  //   if(err){
-  //     callback(err, null)
-  //   } else {
-  //   callback(null, data)
-  // }
-  // });
    Jobs.aggregate([
    {
      $lookup:
