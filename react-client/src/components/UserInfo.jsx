@@ -61,26 +61,26 @@ class UserInfo extends React.Component {
 render() {
   
   return (
-    <div className="container wrapper well"><br />
+    <div id='done' className="container wrapper well"><br />
     <span id="req" className="wrapper">* required</span>
       <form onSubmit = {this.handleSubmit}>
       <Row>
 		<Col md={4}>
-	      <label >*Name
+	      <label id='signlable'>*Name
 	        <FormControl type="text" name="name" placeholder="Name" autoFocus required
-	        onChange = {this.onChange}  value={this.state.states.name}
+	        onChange = {this.onChange} value={this.state.states.name}
 	        />
 	      </label>
       	</Col>
       	<Col md={4}>
-        <label >*Phone Number 
+        <label id='signlable'>*Phone Number 
           <FormControl type="number" name="phoneNumber" placeholder="Phone Number" required
             onChange={this.onChange} value={this.state.states.phoneNumber}/>
           </label><br />
 	    
 	    </Col>
 		<Col md={4}>
-	       <label >*Email:
+	       <label id='signlable'>*Email:
 	        <FormControl type="email" name="email" placeholder="Email" required
 	          onChange={this.onChange}  value={this.state.states.email} /> 
 	        </label><br />
@@ -88,20 +88,20 @@ render() {
      </Row><br />
      <Row>
       	<Col md={4}>
-	        <label >*Gender
+	        <label id='signlable'>*Gender
 	        <FormControl type="text" name="gender" placeholder="Gender" required
 	          onChange={this.onChange}  value={this.state.states.gender} />
 	        </label><br />
         </Col>
 		<Col md={4}>
-    <label >Nationality
+    <label id='signlable'>Nationality
            <FormControl type="text" name="nationality" placeholder="Nationality" 
             onChange={this.onChange} value={this.state.states.nationality} />
           </label><br />
         
 	    </Col>
       	<Col md={4}>   
-	        <label >Address
+	        <label id='signlable'>Address
 	        <FormControl type="text" name="address" placeholder="Address"
 	          onChange={this.onChange} value={this.state.states.address} />
 	        </label><br />
@@ -109,7 +109,7 @@ render() {
 	  </Row><br />
 	  <Row>
 		<Col md={4}>    
-	        <label >*Age
+	        <label id='signlable'>*Age
 	         <FormControl type="number" name="age" placeholder="Age" required
 	          onChange={this.onChange} value={this.state.states.age}/>
 	        </label><br />
