@@ -12,12 +12,8 @@ class UserJobs extends React.Component {
       from: '',
       to: ''}
     }
-    console.log(this.props.match.params.jobTitle)
-    console.log(this.props.match.params.userName)
     this.onChange = this.onChange.bind(this);
     this.handleSubmit  = this.handleSubmit.bind(this);
-    // const posts = this.props.item;
-    //  this.setState({states:posts});
   }
     onChange(e) {
       var states = this.state.states;
@@ -35,6 +31,7 @@ class UserJobs extends React.Component {
     const posts = response.data;
     console.log(posts);
     this.setState({states:posts});
+ 
     
   })
   .catch(function (error) {
@@ -43,8 +40,9 @@ class UserJobs extends React.Component {
    }
 
     handleSubmit(event) {
+      var that =this;
          event.preventDefault();
-        axios.put('/updateUser', this.state.states)
+        axios.put('/updateUserJob', {states:this.state.states,jobTitle:that.props.match.params.jobTitle})
           .then(function (response) {
             console.log(response);
         })
@@ -52,66 +50,92 @@ class UserJobs extends React.Component {
             console.log(error);
         });
     };
-      // <label >*Password
-      //    <FormControl type="password" name="password" placeholder="Password" autoFocus required
-      //      onChange = {this.onChange}  
-      //      />
-
-      //   </label><br />
   
  
 render() {
   
   return (
-    <div className="container wrapper well"><br />
-    <span id="req" className="wrapper">* required</span>
-      <form onSubmit = {this.handleSubmit}>
+  <center>
+      <div id="jobform" className="container wrapper well"><br /><br /><br />
+      <form onSubmit={this.handleSubmit}>
       <Row>
-		<Col md={4}>
-	      <label >*Job Title
-	        <FormControl type="text" name="name" placeholder="Name" autoFocus required
-	        onChange = {this.onChange}  value={this.state.states.jobTitle}
-	        />
-	      </label>
-      	</Col>
-      	<Col md={4}>
-        <label >*Job Description
-          <FormControl type="number" name="phoneNumber" placeholder="Phone Number" required
-            onChange={this.onChange} value={this.state.states.jobDescription}/>
-          </label><br />
-	    
-	    </Col>
-		<Col md={4}>
-	       <label >* Category:
-	        <FormControl type="email" name="email" placeholder="Email" required
-	          onChange={this.onChange}  value={this.state.states.category} /> 
-	        </label><br />
-        </Col>
-     </Row>
-     <Row>
-      	<Col md={4}>
-	        <label >*from
-	        <FormControl type="text" name="gender" placeholder="Gender" required
-	          onChange={this.onChange}  value={this.state.states.from} />
-	        </label><br />
-        </Col>
-		<Col md={4}>
-    <label >to
-           <FormControl type="text" name="nationality" placeholder="Nationality" 
-            onChange={this.onChange} value={this.state.states.to} />
-          </label><br />
-        
-	    </Col>
-      	<Col md={4}>   
-	         <Button type = "submit" bsStyle="success" bsSize="large">Update</Button> 
-	    </Col>
-	  </Row>
-	 
+      <Col md={1}>
+      </Col>
+      <Col md={2}>
+      <span>JOb Title</span>
+      </Col>
+      <Col md={3}>
+       <label >
+      <FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus
+       required onChange={this.onChange}  value={this.state.states.jobTitle} />
+      </label></Col>
+      <Col md={2}>
+      <span>Category</span>
+      </Col>
+      <Col md={3}>
+      <label >
+      <div className="form-group">
+        <select name = "category" className="form-control selectpicker btn btn-default" 
+        id="catB" onChange={this.onChange} value={this.state.states.category}>
+          <option value="Select">Select Category</option>
+          <option value="Driver">Driver</option>
+          <option value="Home Maintenance">Home Maintenance</option>
+          <option value="Computer Maintenance">Computer Maintenance</option>
+          <option value="Babysitting">Babysitting</option>
+          <option value="Tutoring">Tutoring</option>
+        </select>
+        </div>
+      </label>
+     </Col>
+      <Col md={1}>
+      </Col>
+      </Row> <br />
 
-      
+      <Row>
+      <Col md={1}>
+      </Col> 
+      <Col md={2}>
+      <span>Job Description</span>
+      </Col>
+      <Col md={8}>
+      <label >
+      <FormControl  componentClass="textarea" rows={2} cols={90} name="jobDescription" placeholder = "Job Description"
+      autoFocus required onChange={this.onChange} value={this.state.states.jobDescription}/>
+      </label></Col>
+     
+      <Col md={1}>
+      </Col> 
+      </Row><br />
 
+      <Row>
+      <Col md={1}>
+      </Col> 
+      <Col md={2}>
+      <span>From</span>
+      </Col>
+      <Col md={3}>
+      <label >
+      <FormControl type = "time" name = "from" placeholder = "From" autoFocus
+       required onChange={this.onChange} value={this.state.states.from}/>
+      </label> </Col>
+      <Col md={2}>
+      <span>To</span>
+      </Col>
+      <Col md={3}>
+      <label >
+      <FormControl type = "time" name = "to" placeholder = "To" autoFocus 
+      required onChange={this.onChange} value={this.state.states.to}/>
+      </label></Col>
+      <Col md={1}>
+      </Col>
+      </Row><br /><br />
+
+          <Button id="jobb" className="btn btn-primary" type="submit" bsSize="large" >
+              Update
+          </Button> 
       </form>
-	</div>
+      </div>
+      </center>
     )
   }
 }

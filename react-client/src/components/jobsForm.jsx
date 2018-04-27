@@ -52,33 +52,11 @@ class JobsForm extends React.Component {
 			<Col md={1}>
 			</Col>
 			<Col md={2}>
-			<span>User</span>
-			</Col>
-			<Col md={3}>
-			<label >
-
-			<FormControl type = "text" name = "user" placeholder = "Username" autoFocus required onChange = {this.onChange} value={this.state.states.user}/>
-			</label></Col>
-			<Col md={2}>
 			<span>Job Title</span>
 			</Col>
 			<Col md={3}>
 			<label >
 			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus required onChange={this.onChange} />
-			</label></Col>
-			<Col md={1}>
-			</Col>
-			</Row> <br />
-
-			<Row>
-			<Col md={1}>
-			</Col> 
-			<Col md={2}>
-			<span>Job Description</span>
-			</Col>
-			<Col md={3}>
-			<label >
-			<FormControl type = "text" name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			<Col md={2}>
 			<span>Category</span>
@@ -95,7 +73,23 @@ class JobsForm extends React.Component {
           <option value="Tutoring">Tutoring</option>
         </select>
         </div>
-			</label> </Col>
+			</label>
+			</Col>
+			<Col md={1}>
+			</Col>
+			</Row> <br />
+
+			<Row>
+			<Col md={1}>
+			</Col> 
+			<Col md={2}>
+			<span>Job Description</span>
+			</Col>
+			<Col md={8}>
+			<label >
+			<FormControl  componentClass="textarea" rows={2} cols={90} name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
+			</label></Col>
+			
 			<Col md={1}>
 			</Col> 
 			</Row><br />

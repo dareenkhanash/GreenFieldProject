@@ -47,7 +47,7 @@ app.get('/jobs', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			
+			console.log(jobs);
 			res.send(jobs);
 		}
 	});	
@@ -73,8 +73,9 @@ app.post('/userJob', function(req, res){
 		}
 	});
 });
-app.put('/userJob', function(req, res){
-		Jobs.updateUserJob(req.body.jobTitle,req.body.user,req.body, function(err, user){
+app.put('/updateUserJob', function(req, res){
+	
+		Jobs.updateUserJob(req.body.jobTitle,req.body.states.user,req.body.states, function(err, user){
 		if(err){
 			console.log(err);
 		} else {
@@ -163,7 +164,7 @@ app.delete('/:userName', function (req, res) {
 
 // Jobs commands 
 app.post('/job', function(req, res){
-	Jobs.createJob(req.body, function(err,jobs){
+	Jobs.createJob(req.session.userName,req.body, function(err,jobs){
 		if(err){
 			console.log(err);
 		} else {
