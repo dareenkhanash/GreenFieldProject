@@ -56,7 +56,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={3}>
 			<label >
-			<FormControl type = "text" name = "jobTitle" placeholder = "Job Title" autoFocus required onChange={this.onChange} />
+			<FormControl maxLength={20} type="text" name="jobTitle" placeholder = "Job Title" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			<Col md={2}>
 			<span>Category</span>
@@ -87,7 +87,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={8}>
 			<label >
-			<FormControl  componentClass="textarea" rows={2} cols={90} name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
+			<FormControl id="txtArea" componentClass="textarea" rows={2} cols={90} maxLength={100} name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			
 			<Col md={1}>
