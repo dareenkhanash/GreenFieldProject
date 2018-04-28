@@ -13,9 +13,9 @@ render() {
   
   return (
     <div>
-    <div className="jobsDiv">
+    <div className="jobsDiv"><br />
     <Link to = {`/UserJobs/${ this.props.item.jobTitle }/${ this.props.item.user }`} activeClassName = "is-active" >
-      <Row>
+      <Row id="userjob">
       <Col md={4}>
       <span><b>Name : </b></span>
       <span>{this.props.item.user}</span>
@@ -30,7 +30,7 @@ render() {
       </Col>
     </Row><br />
     
-        <Row>
+        <Row id="userjob">
             <Col md={4}>
             <span><b>From : </b></span>
       <span>{this.props.item.from}</span>
@@ -41,7 +41,7 @@ render() {
       </Col> 
     </Row><br />
 
-    <Row>
+    <Row id="userjob">
     <Col md={1}>
     </Col>
       <Col id="description" md={10}>

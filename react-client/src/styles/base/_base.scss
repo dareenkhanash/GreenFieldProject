@@ -145,12 +145,17 @@ li a:hover:not(.is-active) {
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 10px;
+    color: black;
 }
 
+#userjob {
+    color: black;
+    font-size: 18px;
+}
 
 #loginimg {
-    width: 175px;
-    height: 175px
+    width: 180px;
+    height: 180px
 }
 
 #b {
@@ -163,12 +168,11 @@ li a:hover:not(.is-active) {
 }
 
 .form-signin {
-    max-width: 420px;
-    padding: 10px 38px 66px;
+    width: 430px;
+    padding: 10px 38px 50px;
     margin: 0 auto;
     background-color: #eee;
-    border: 3px dotted rgba(0,0,0,0.1);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .form-signin-heading {
@@ -178,7 +182,6 @@ li a:hover:not(.is-active) {
 
 #logform {
     border-radius: 10px; 
-    position: relative;
     font-size: 16px;
     height: auto;
     padding: 10px;
@@ -258,9 +261,9 @@ li a:hover:not(.is-active) {
   background: linear-gradient(to bottom, #e6dada, #274046);  
 }
 
-#done {
-  width: 870px;
-  height: 420px;
+#profileUpdate {
+  width: 900px;
+  height: 395px;
   border-radius: 10px;  
 }
 
