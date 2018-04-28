@@ -50,14 +50,14 @@ render() {
   
   return (
   
-    <div>
+    <div id="profile">
     <br/>
     <div>
     <UserInfo user={this.state.user}/>
     </div>
     <div>
     {arr}
-    </div>
+    </div><br /><br />
     </div>
     
     )

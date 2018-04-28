@@ -70,7 +70,7 @@ render() {
     })
   return (
   
-    <div>
+    <div id='home'>
     <br />
     <div>
     <Search searchJobTitle={this.searchJobTitle.bind(this)} searchJobCategory={this.searchJobCategory.bind(this)} />

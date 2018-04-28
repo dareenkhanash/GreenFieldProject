@@ -46,7 +46,7 @@ class JobsForm extends React.Component {
 	render() {
 		return (
 			<center>
-			<div id="jobform" className="container wrapper well"><br /><br /><br />
+			<div id="jobform" className="container wrapper well"><br />
 			<form onSubmit={this.handleSubmit}>
 			<Row>
 			<Col md={1}>
@@ -87,7 +87,7 @@ class JobsForm extends React.Component {
 			</Col>
 			<Col md={8}>
 			<label >
-			<FormControl id="txtArea" componentClass="textarea" rows={2} cols={90} maxLength={100} name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
+			<FormControl id="txtArea" componentClass="textarea"  maxLength={150} name="jobDescription" placeholder = "Job Description" autoFocus required onChange={this.onChange} />
 			</label></Col>
 			
 			<Col md={1}>
