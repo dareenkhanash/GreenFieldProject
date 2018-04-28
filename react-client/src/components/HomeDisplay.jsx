@@ -16,9 +16,8 @@ render() {
 	
   return (
   	<div>
-  	<div id ='postDiv'className="jobsDiv container">
+  	<div id ='postDiv' className="jobsDiv container"><br />
   		<Row>
-			
 			<Col md={4}>
 			<span><b>Name : </b></span>
 			<span>{this.props.item.user}</span>
@@ -31,12 +30,9 @@ render() {
 			<span><b>Job Category : </b></span>
 			<span>{this.props.item.category}</span>
 			</Col>
-			
-			
 		</Row><br />
 		
         <Row>
-			
             <Col md={4}>
             <span><b>From : </b></span>
 			<span>{this.props.item.from}</span>
@@ -48,9 +44,9 @@ render() {
 			<Col md={4}>
 			<span><b>Phone Number : </b></span>
 			<span>{phonNum}</span>
-			</Col>
-			
+			</Col>	
 		</Row><br />
+
 		<Row>
 		<Col md={1}>
 		</Col>
@@ -60,22 +56,17 @@ render() {
 			</Col>
 			<Col md={1}>
 			</Col>
-			
 		</Row><br />
+
 		 <Row>
 		 <Col md={8}>
-			
 			</Col>
 		 <Col id='postTime' md={4}>
 			<span><b>Posted at : </b></span>
 			<span>{this.props.item.created_at.slice(0, 10)}</span>
 			</Col>
 		 </Row>
-    
-    
-    
-    
-    </div>
+    </div><br />
     </div>
     )
   }

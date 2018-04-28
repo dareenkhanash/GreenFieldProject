@@ -103,7 +103,6 @@ render() {
       <FormControl  componentClass="textarea" rows={2} cols={90} name="jobDescription" placeholder = "Job Description"
       autoFocus required onChange={this.onChange} value={this.state.states.jobDescription}/>
       </label></Col>
-     
       <Col md={1}>
       </Col> 
       </Row><br />
@@ -134,7 +133,7 @@ render() {
           <Button id="jobb" className="btn btn-primary" type="submit" bsSize="large" >
               Update
           </Button> 
-      </form>
+      </form><br />
       </div>
       </center>
     )

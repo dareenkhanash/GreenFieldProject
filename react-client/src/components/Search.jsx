@@ -30,7 +30,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div id="catagory" className="search-bar form-inline">  
+      <div id="catagory" className="search-bar form-inline container">  
 
       <div className="form-group">
         <select id="catB" onChange={this.handleCategoryChange} value={this.state.val} className="form-control selectpicker btn btn-info">
