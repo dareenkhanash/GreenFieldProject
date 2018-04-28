@@ -116,7 +116,7 @@ class SignUpForm extends React.Component {
   <Col md={4}>
   </Col>
     <Col md={4}>   
-      <Button type = "submit" bsStyle="success" bsSize="large">SignUp</Button> 
+      <Button type="submit" bsStyle="primary" bsSize="large">SignUp</Button> 
   </Col>
   </Row>
   </form>
