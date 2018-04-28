@@ -53,7 +53,8 @@ class UserInfo extends React.Component {
 render() {
   
   return (
-    <div id='done' className="container wrapper well"><br />
+    <div>
+    <div id='profileUpdate' className="container wrapper well"><br />
     <span id="req" className="wrapper">* required</span>
       <form onSubmit = {this.handleSubmit}>
       <Row>
@@ -109,11 +110,12 @@ render() {
     <Col md={4}>
     </Col>
       	<Col md={4}>   
-	        <Button type = "submit" bsStyle="success" bsSize="large">Update</Button> 
+	        <Button type = "submit" bsStyle="primary" bsSize="large">Update</Button> 
 		</Col>
 	  </Row>
       </form>
 	</div>
+  </div>
     )
   }
 }
