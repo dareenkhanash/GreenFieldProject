@@ -16,7 +16,7 @@ class NotAuthenticatedHome extends React.Component {
     event.preventDefault();
     axios.get('/logout')
         .then(function (response) {
-        window.location.href = "/login";
+            window.location.href = "/";
         })
         .catch(function (error) {
          console.log(error);

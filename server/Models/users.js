@@ -56,14 +56,20 @@ var getUser = function(userName, password, callback){
     if(err){
       callback(err,null)
     } else {
-      ////checking the password
-      if(bcrypt.compareSync(password, userdata.password)){
+      if(userdata){
+          ////checking the password
+        if(bcrypt.compareSync(password, userdata.password)){
         //retrieve the data if the user is exist 
         callback(null, userdata);
       }
         else{
           callback("wrong password", null);
         }
+      }else{
+        callback("no user", null);
+      }
+    
+      
       }
   });
 };
