@@ -57,7 +57,13 @@ app.get('/jobs', function(req, res){
 		}
 	});	
 });
-
+app.get('/logged', function(req, res){
+	if(req.session.userName){
+		res.send(true)
+	}else{
+		res.send(false)
+	}
+});
 //it renders the jobs for each individual user
 app.get('/userJobs', function(req, res){
 	Jobs.jobByUserName({"user": req.session.userName}, function(err, job){
@@ -133,7 +139,7 @@ app.post("/signup",function(req, res){
 // destroys sessions when logout
 app.get('/logout', function (req, res) {
 	req.session.destroy();
-	res.redirect('/login');
+	res.redirect('/');
 });
 
 //it checks the user information; if it already exists, it will create a session

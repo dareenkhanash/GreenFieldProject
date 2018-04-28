@@ -15,7 +15,6 @@ class UserInfo extends React.Component {
 
     }
  
-    console.log(props);
     this.onChange = this.onChange.bind(this);
     this.handleSubmit  = this.handleSubmit.bind(this);
   }
@@ -50,13 +49,6 @@ class UserInfo extends React.Component {
             console.log(error);
         });
     };
-      // <label >*Password
-      //    <FormControl type="password" name="password" placeholder="Password" autoFocus required
-      //      onChange = {this.onChange}  
-      //      />
-
-      //   </label><br />
-  
  
 render() {
   

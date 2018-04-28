@@ -18,7 +18,6 @@ class Profile extends React.Component {
     axios.get('/userJobs')
     .then(response => {
     const posts = response.data;
-    console.log("response");
     this.setState({jobs:posts});
     
     
