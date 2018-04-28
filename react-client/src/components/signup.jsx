@@ -16,7 +16,8 @@ class SignUpForm extends React.Component {
         phoneNumber: '',
         address: '',
         age: '',
-        nationality: ''}
+        nationality: ''},
+      message:''
     }
 
     this.onChange = this.onChange.bind(this);
@@ -27,13 +28,15 @@ class SignUpForm extends React.Component {
       var name = e.target.name;
       var value = e.target.value;
       states[name] = value;
-      this.setState({states});
+      this.setState({states:states});
     };
 
     handleSubmit(event) {
+      var that=this;
          event.preventDefault();
         axios.post('/signup', this.state.states)
           .then(function (response) {
+            that.setState({message:"User Added"});
               // window.location.href = "/login";
         })
           .catch(function (error) {
@@ -117,6 +120,7 @@ class SignUpForm extends React.Component {
   </Col>
     <Col md={4}>   
       <Button type = "submit" bsStyle="success" bsSize="large">SignUp</Button> 
+       <h3 className="SuccessMessage">{this.state.message}</h3>
   </Col>
   </Row>
   </form>
