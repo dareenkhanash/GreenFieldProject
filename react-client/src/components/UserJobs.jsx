@@ -10,7 +10,8 @@ class UserJobs extends React.Component {
       jobDescription: '',
       category: '',
       from: '',
-      to: ''}
+      to: ''},
+      message:''
     }
     this.onChange = this.onChange.bind(this);
     this.handleSubmit  = this.handleSubmit.bind(this);
@@ -20,7 +21,7 @@ class UserJobs extends React.Component {
       var name = e.target.name;
       var value = e.target.value;
       states[name] = value;
-      this.setState({states});
+       this.setState({states:states});
 
     };
    componentDidMount() {
@@ -44,7 +45,7 @@ class UserJobs extends React.Component {
          event.preventDefault();
         axios.put('/updateUserJob', {states:this.state.states,jobTitle:that.props.match.params.jobTitle})
           .then(function (response) {
-            console.log(response);
+            that.setState({message:"Job Updated"});
         })
           .catch(function (error) {
             console.log(error);
@@ -133,6 +134,7 @@ render() {
           <Button id="jobb" className="btn btn-primary" type="submit" bsSize="large" >
               Update
           </Button> 
+          <h3 className="SuccessMessage">{this.state.message}</h3>
       </form><br />
       </div>
       </center>
