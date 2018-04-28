@@ -12,8 +12,8 @@ class JobsForm extends React.Component {
 			jobDescription: '',
 			category: '',
 			from: '',
-			to: ''}
-
+			to: ''},
+			message:''
 			
 		}
 		this.baseState = this.state;
@@ -26,15 +26,17 @@ class JobsForm extends React.Component {
       var name = e.target.name;
       var value = e.target.value;
       states[name] = value;
-      this.setState({states});  
+      this.setState({states:states});  
 	};
 	
 
 	handleSubmit(event) {
+		var that=this;
 		event.preventDefault();
 		axios.post('/job', this.state.states)
   			.then(function (response) {
-    		console.log(response);
+  				that.setState({message:"Job Added"}); 
+    		
   			})
   			.catch(function (error) {
     		console.log(error);
@@ -116,8 +118,10 @@ class JobsForm extends React.Component {
 			</Row><br /><br />
 
 			    <Button id="jobb" className="btn btn-primary" type="submit" bsSize="large" >
-				      Submit
-			    </Button>	
+				     Add
+			    </Button>
+			    <h3 className="SuccessMessage">{this.state.message}</h3>
+
 			</form>
 			</div>
 			</center>

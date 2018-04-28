@@ -146,8 +146,9 @@ app.get('/logout', function (req, res) {
 app.post('/login', function (req, res) {
 	Users.getUser(req.body.userName, req.body.password, function(err, user){
 		if(err){
-			console.log(err)
+			res.send(err);
 		} else {
+
 			req.session.userName = user.userName;
 			res.locals.login = user;
 			res.locals.session = req.session;

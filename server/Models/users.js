@@ -66,7 +66,7 @@ var getUser = function(userName, password, callback){
           callback("wrong password", null);
         }
       }else{
-        callback("no user", null);
+        callback("Invalid User Name", null);
       }
     
       

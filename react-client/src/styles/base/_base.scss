@@ -31,7 +31,12 @@ li {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
 }
-
+.Message{
+    color:red;
+}
+.SuccessMessage{
+    color:green;
+}
 #posts {
     font-family: Helvetica, Arial, sans-serif;
     color: blue;
