@@ -5,7 +5,7 @@ body {
     font-family: Rajdhani;
     color: DARKBLUE;
     font-size: 1.6rem;
-    background: linear-gradient(to bottom, #ffeeee, #ddefbb);
+    background: linear-gradient(to bottom, #e6dada, #274046);
 }
 
 ul {
@@ -135,7 +135,7 @@ li a:hover:not(.is-active) {
 }
 
 .jobsDiv {
-    background: url(https://image.freepik.com/free-vector/polygonal-space-background-with-connecting-dots-and-lines_8188-135.jpg);
+    background: url(https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fpolygonal-space-background-with-connecting-dots-and-lines_8188-135.jpg);
     opacity: 0.8;
     border-radius: 10px; 
     width: 900;
@@ -147,9 +147,10 @@ li a:hover:not(.is-active) {
     padding-left: 10px;
 }
 
+
 #loginimg {
-    width: 100px;
-    height: 100px
+    width: 175px;
+    height: 175px
 }
 
 #b {
@@ -223,11 +224,18 @@ li a:hover:not(.is-active) {
 }
 
 #signUpPage {
-    background: url(https://pre00.deviantart.net/36e2/th/pre/i/2009/362/e/3/office_desk_background_by_chocotemplates.jpg);
+    background: linear-gradient(to bottom, #e6dada, #274046);
     background-size: cover;
     height: 93vh;
     width: 100vw;
-    color: red;
+    color: navyblue;
+}
+
+#loginpage {
+    background: linear-gradient(to bottom, #e6dada, #274046);
+    background-size: cover;
+    height: 93vh;
+    width: 100vw;
 }
 
 #postTime {
@@ -237,7 +245,7 @@ li a:hover:not(.is-active) {
 
 #postDiv {
   font-family: Mina;
-  color: #2948ff;
+  color: #141414;
   font-size: 18px;
 }
 
@@ -248,10 +256,6 @@ li a:hover:not(.is-active) {
 
 #profile {
   background: linear-gradient(to bottom, #e6dada, #274046);  
-}
-
-#home {
-    background: linear-gradient(to bottom, #e6dada, #274046);    
 }
 
 #done {
