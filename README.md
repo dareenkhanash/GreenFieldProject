@@ -1,6 +1,5 @@
 # Project Name
-
-> Pithy project description
+### Pocket-Jobs
 
 ## Team
 
