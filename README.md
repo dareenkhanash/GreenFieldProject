@@ -1,36 +1,23 @@
 # Project Name
-### Pocket-Jobs
 
-## Team
+> Pocket-Jobs
 
-  - __Product Owner__: Atheer Mahmood
-  - __Scrum Master__: Dareen Hanash
-  - __Development Team Members__: Hamza Alwan, Livia Nistor
+## Description
+
+Pocket-Jobs is a web application for people who are looking for someone to do a specific job in a specific period of time.
+It lets pepole who have skills or free time to do something useful .
 
 ## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-    1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
-1. [Team](#team)
-1. [Contributing](#contributing)
-
-## Usage
-  Clone or download the repo and run npm install, then open three terminal windows:
-1. npm run server-dev
-2. npm run react-dev
-3. sudo mongod
-
+* [Requirements](#Requirements)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Credit](#Credit)
 
 ## Requirements
 
 Node ^6.11.4
 MongoDb
 React
-
-## Development
 
 ### Installing Dependencies
 
@@ -42,11 +29,15 @@ npm install
 bower install
 ```
 
-### Roadmap
+## Usage
+  Clone or download the repo and run npm install, then open three terminal windows:
+1. npm run server-dev
+2. npm run react-dev
+3. sudo mongod
 
-View the project roadmap [here](https://waffle.io/RBKJuggernaut/GreenFieldProject)
 
+## Credit
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+  - __Product Owner__: Atheer Mahmood
+  - __Scrum Master__: Dareen Hanash
+  - __Development Team Members__: Hamza Alwan, Livia Nistor
