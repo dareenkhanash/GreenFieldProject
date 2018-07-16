@@ -1,6 +1,5 @@
-# Project Name
-
-> Pocket-Jobs
+# Pocket-Jobs
+ 
 
 ## Description
 
@@ -38,6 +37,6 @@ bower install
 
 ## Credit
 
-  - __Product Owner__: Atheer Mahmood
-  - __Scrum Master__: Dareen Hanash
-  - __Development Team Members__: Hamza Alwan, Livia Nistor
+  - __Product Owner__: https://github.com/Atheer83
+  - __Scrum Master__: https://github.com/dareenkhanash
+  - __Development Team Members__: https://github.com/Elena-Livia, https://github.com/HamzaAlwan
